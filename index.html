@@ -1,0 +1,988 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Caveau Ramen Alassio</title>
+<meta name="description" content="Caveau Ramen ad Alassio: ramen, donburi, gyoza e dorayaki. Menu, orari e prenotazione del tavolo su WhatsApp.">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Yuji+Boku&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>/* Layout concept: a Tokyo festival-street poster. Deep red shop-front hero with noren, lanterns and a street of signs; cream paper sections with red ribbon titles, starburst prices and sakura accents. One deliberate look, light on both themes. */
+:root{
+  --red:#c9202c; --red-d:#8f1220; --red-dd:#58091a;
+  --gold:#ffd13a; --gold-d:#e9a50c;
+  --cream:#fff3d8; --cream-2:#fde4b3; --paper:#fffaf0;
+  --ink:#2b0d0a; --ink-2:#552a20; --mute:#7d5a4c;
+  --pink:#ff93b5; --pink-l:#ffd9e5;
+  --teal:#1f8f80; --teal-d:#0e5a53;
+  --wa:#2bd16a; --wa-ink:#06301a;
+  --f-disp:'Lilita One','Hiragino Maru Gothic ProN','Arial Rounded MT Bold',system-ui,sans-serif;
+  --f-body:'Zen Maru Gothic','Hiragino Maru Gothic ProN','Yu Gothic',system-ui,sans-serif;
+  --f-brush:'Yuji Boku','Hiragino Mincho ProN','Yu Mincho',serif;
+  --hh:68px;
+  --gl:max(16px,env(safe-area-inset-left,0px));
+  --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hh) + 20px)}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;
+  padding-left:var(--gl);padding-right:var(--gr);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:90;background:var(--cream)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4,p,ul{margin:0}
+ul{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1120px;margin-inline:auto}
+.bleed{margin-left:calc(-1*var(--gl));margin-right:calc(-1*var(--gr));padding-left:var(--gl);padding-right:var(--gr)}
+.ic{width:1em;height:1em;display:inline-block;vertical-align:-.12em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;text-decoration:none;font-family:var(--f-disp);font-size:1.05rem;letter-spacing:.03em;
+  padding:.78em 1.5em .66em;border-radius:999px;border:3px solid var(--ink);background:var(--gold);color:var(--ink);box-shadow:0 5px 0 var(--ink);cursor:pointer;
+  transition:transform .12s,box-shadow .12s;line-height:1.1;text-align:center}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--ink)}
+.btn:active{transform:translateY(5px);box-shadow:0 0 0 var(--ink)}
+.btn.red{background:var(--red);color:var(--cream)}
+.btn.wa{background:var(--wa);color:var(--wa-ink)}
+.btn.paper{background:var(--paper)}
+.btn.sm{font-size:.9rem;padding:.55em 1.1em .45em;box-shadow:0 3px 0 var(--ink)}
+.btn.sm:hover{box-shadow:0 1px 0 var(--ink)}
+.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:var(--cream);border-bottom:4px solid var(--red);
+  box-shadow:0 4px 0 var(--gold),0 9px 16px rgba(43,13,10,.18)}
+.top .in{display:flex;align-items:center;gap:12px;height:var(--hh)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);min-width:0}
+.brand img{width:56px;height:56px;border-radius:50%;margin-bottom:-16px;position:relative;z-index:2;flex:0 0 auto;
+  box-shadow:0 0 0 3px var(--cream),0 0 0 5px var(--ink),0 8px 12px rgba(43,13,10,.3)}
+.brand b{display:block;font-family:var(--f-disp);font-weight:400;font-size:1.4rem;color:var(--red);letter-spacing:.03em;line-height:1;text-shadow:0 2px 0 var(--gold)}
+.brand small{display:block;font-size:.68rem;letter-spacing:.2em;color:var(--mute);font-weight:700;margin-top:3px}
+.nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav a.l{font-weight:700;text-decoration:none;padding:.4em .85em;border-radius:999px}
+.nav a.l:hover{background:var(--cream-2)}
+.lang{position:relative}
+.lang>button{font:inherit;font-weight:700;display:flex;gap:7px;align-items:center;padding:.38em .8em;border:2.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
+.lang>button svg{width:18px;height:18px}
+.lang ul{position:absolute;right:0;top:calc(100% + 10px);padding:6px;background:#fff;border:3px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--red);min-width:168px;z-index:95}
+.lang li button{display:flex;width:100%;gap:10px;align-items:center;font:inherit;font-weight:500;text-align:left;border:0;background:none;color:var(--ink);padding:.55em .7em;border-radius:9px;cursor:pointer}
+.lang li button:hover{background:var(--cream-2)}
+.lang li button[aria-selected="true"]{background:var(--gold);font-weight:700}
+.lang li b{font-family:var(--f-disp);font-weight:400;width:1.8em;color:var(--red)}
+@media (max-width:920px){.nav a.l{display:none}}
+@media (max-width:520px){.brand small{display:none}.brand b{font-size:1.2rem}.nav .btn{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--red-dd);color:var(--cream);isolation:isolate}
+.street{position:absolute;inset:0;z-index:0;overflow:hidden}
+.sg{position:absolute;border:3px solid rgba(255,243,216,.9);box-shadow:0 0 22px rgba(255,170,50,.5);display:grid;place-items:start center;padding-top:10px;line-height:1.05}
+.sg span{writing-mode:vertical-rl;font-family:var(--f-brush);font-weight:700;letter-spacing:.08em}
+.sg.red{background:#c9202c;color:#fff3d8}.sg.cream{background:#fff3d8;color:#c9202c;border-color:#c9202c}
+.sg.teal{background:#1f8f80;color:#fff3d8}.sg.gold{background:#ffd13a;color:#8f1220;border-color:#8f1220}
+.sg.navy{background:#1c2a52;color:#ffd13a}.sg.pink{background:#ff93b5;color:#58091a;border-color:#58091a}
+.sg.back{opacity:.5;filter:blur(1px)}
+.bk{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,196,80,.9),rgba(255,150,40,0) 70%);filter:blur(2px)}
+.shade{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(60,6,18,.95) 0%,rgba(60,6,18,.82) 42%,rgba(60,6,18,.38) 100%),
+             linear-gradient(180deg,rgba(60,6,18,.65),rgba(60,6,18,0) 30%,rgba(60,6,18,.5) 100%)}
+.hero #petals{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.noren{position:absolute;top:0;left:0;right:0;z-index:4;pointer-events:none}
+.beam{height:16px;background:linear-gradient(#6b3a1c,#3a1809);border-bottom:3px solid var(--gold);box-shadow:0 4px 8px rgba(0,0,0,.4)}
+.nr-row{display:flex;justify-content:center;overflow:hidden;height:98px}
+.nr{flex:0 0 auto;width:clamp(46px,6.4vw,84px);height:90px;margin:0 2px;transform-origin:50% 0;animation:sway 6s ease-in-out infinite;
+  background:var(--red);clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%);display:grid;place-items:start center;padding-top:14px;border-top:5px solid var(--cream);color:var(--cream)}
+.nr:nth-child(even){background:var(--red-d);animation-delay:-2s}
+.nr:nth-child(3n){animation-delay:-4s}
+.nr span{writing-mode:vertical-rl;font-family:var(--f-brush);font-weight:700;font-size:clamp(1.3rem,2.4vw,2rem);line-height:1}
+@keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+.lan{position:absolute;top:30px;width:58px;height:118px;z-index:6;transform-origin:50% 0;animation:sway 5s ease-in-out infinite;filter:drop-shadow(0 10px 12px rgba(0,0,0,.45))}
+.lan.l1{left:3%}.lan.l2{left:10%;top:42px;animation-delay:-2s;width:50px;height:102px}
+.lan.r1{right:3%;animation-delay:-1s}.lan.r2{right:10%;top:42px;animation-delay:-3s;width:50px;height:102px}
+@media (max-width:760px){.lan.l2,.lan.r2{display:none}.lan{width:44px;height:90px}}
+.hero-grid{position:relative;z-index:5;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:36px;align-items:center;padding-block:152px 90px;max-width:1120px;margin-inline:auto}
+@media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr);padding-block:130px 64px;gap:28px}}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:.92rem;padding:.4em 1em;background:var(--cream);color:var(--red-dd);border:3px solid var(--gold);border-radius:999px;box-shadow:0 4px 0 rgba(0,0,0,.35);margin-bottom:12px}
+.status i{width:11px;height:11px;border-radius:50%;background:#1fb65a;box-shadow:0 0 0 4px rgba(31,182,90,.25)}
+.status.closed i{background:var(--mute);box-shadow:none}
+.logotype{display:block;width:min(100%,610px);height:auto;filter:drop-shadow(0 12px 14px rgba(0,0,0,.4));margin:0 0 6px -8px}
+.ribbon{position:relative;display:inline-block;padding:.34em 1.5em .26em;background:linear-gradient(180deg,#dc2c37,#b01826);color:var(--cream);font-family:var(--f-disp);font-size:clamp(1.25rem,3.6vw,2rem);
+  letter-spacing:.04em;line-height:1.15;text-shadow:0 2px 0 rgba(88,9,26,.75);box-shadow:0 5px 0 var(--red-dd),0 10px 16px rgba(0,0,0,.3);margin-inline:26px;transform:rotate(-1.5deg);text-align:center;max-width:calc(100% - 52px)}
+.ribbon::before,.ribbon::after{content:"";position:absolute;top:.5em;bottom:-.45em;width:26px;background:var(--red-d)}
+.ribbon::before{left:-24px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,12px 50%)}
+.ribbon::after{right:-24px;clip-path:polygon(0 0,100% 0,100% 100%,12px 50%,0 100%) }
+.ribbon::after{clip-path:polygon(0 0,100% 0,calc(100% - 12px) 50%,100% 100%,0 100%)}
+.hero .ribbon{font-size:clamp(1.05rem,2.8vw,1.5rem)}
+.lead{font-size:1.18rem;max-width:36ch;margin:22px 0 26px;color:var(--cream);text-shadow:0 2px 6px rgba(0,0,0,.45)}
+.cta{display:flex;gap:16px;flex-wrap:wrap}
+.art{position:relative;max-width:570px;width:100%;margin-inline:auto;padding:24px 14px 74px}
+.sun{position:absolute;left:50%;top:44%;width:150%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;z-index:0;
+  background:repeating-conic-gradient(from 0deg,#ffe27a 0 7.5deg,#ffb92e 7.5deg 15deg);opacity:.85;
+  -webkit-mask:radial-gradient(circle,#000 25%,transparent 62%);mask:radial-gradient(circle,#000 25%,transparent 62%);animation:spin 120s linear infinite}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.poster{position:relative;z-index:1;border:6px solid var(--cream);border-radius:22px;overflow:hidden;transform:rotate(2deg);aspect-ratio:1205/739;background:var(--ink);
+  box-shadow:0 0 0 3px var(--ink),0 28px 46px rgba(0,0,0,.55)}
+.poster>img{width:100%;height:100%;object-fit:cover}
+.awning{position:absolute;left:0;right:0;top:0;height:46px;background:var(--awning) repeat-x 0 0/72px 46px;filter:drop-shadow(0 4px 0 rgba(0,0,0,.28))}
+.medal{position:absolute;left:-8px;top:-4px;width:clamp(96px,22vw,134px);z-index:4;transform:rotate(-8deg);filter:drop-shadow(0 10px 12px rgba(0,0,0,.5))}
+.sticker{position:absolute;right:-6px;bottom:4px;width:clamp(118px,30vw,176px);aspect-ratio:1;border-radius:50%;border:6px solid var(--cream);overflow:hidden;z-index:3;transform:rotate(6deg);
+  box-shadow:0 0 0 3px var(--ink),0 16px 26px rgba(0,0,0,.55)}
+.sticker img{width:100%;height:100%;object-fit:cover}
+.burst{position:absolute;display:grid;place-items:center;text-align:center;font-family:var(--f-disp);color:var(--red);line-height:1;
+  background:var(--burst) center/contain no-repeat;filter:drop-shadow(2px 4px 0 rgba(43,13,10,.35))}
+.burst small{font-size:.62em;display:block;margin-top:-.05em}
+.burst.k{right:-10px;bottom:132px;width:98px;height:98px;font-size:1.5rem;z-index:5;transform:rotate(-10deg)}
+.kl{position:absolute;right:20px;bottom:0;z-index:5;transform:rotate(-3deg);font-family:var(--f-disp);font-size:1rem;letter-spacing:.05em;background:var(--red);color:var(--cream);padding:.3em 1em .22em;border:3px solid var(--cream);box-shadow:0 0 0 3px var(--ink),0 6px 10px rgba(0,0,0,.4)}
+.fl{position:absolute;z-index:4;width:44px;height:44px;animation:bob 5s ease-in-out infinite;filter:drop-shadow(0 4px 4px rgba(0,0,0,.3))}
+.fl.a{left:30%;top:-4px}.fl.b{right:-2px;top:20px;width:56px;height:56px;animation-delay:-2s}.fl.c{left:-10px;bottom:90px;width:52px;height:52px;animation-delay:-1s}.fl.d{left:44%;bottom:30px;width:38px;height:38px;animation-delay:-3s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(12deg)}}
+@media (prefers-reduced-motion:reduce){.sun,.nr,.lan,.fl,.band div{animation:none}}
+
+/* band */
+.band{background:var(--red-d);border-block:4px solid var(--gold);overflow:hidden;white-space:nowrap;position:relative;z-index:2}
+.band div{display:inline-block;padding:11px 0 8px;font-family:var(--f-brush);font-weight:700;font-size:1.35rem;letter-spacing:.14em;color:var(--gold);animation:slide 42s linear infinite}
+.band span{margin-inline:.9em;color:var(--pink)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* sections */
+.sec{position:relative;padding-block:84px}
+.sec.edge::before{content:"";position:absolute;left:0;right:0;top:-1px;height:20px;z-index:2;
+  background:radial-gradient(circle at 14px 0,var(--edge) 13px,transparent 14px) 0 0/28px 20px repeat-x}
+.dots{background-color:var(--cream);background-image:radial-gradient(rgba(201,32,44,.14) 1.7px,transparent 2px);background-size:17px 17px}
+.dots2{background-color:var(--cream-2);background-image:radial-gradient(rgba(143,18,32,.15) 1.7px,transparent 2px);background-size:17px 17px}
+.rays{background-color:var(--red-d);background-image:repeating-conic-gradient(from 0deg at 50% 0%,rgba(255,255,255,.055) 0 4deg,transparent 4deg 8deg)}
+.teal{background-color:var(--teal-d);background-image:radial-gradient(rgba(255,255,255,.08) 1.7px,transparent 2px);background-size:17px 17px}
+.sec-h{text-align:center;margin-bottom:38px}
+.sec-h .ribbon{font-size:clamp(1.5rem,4.6vw,2.5rem)}
+.sec-h .kj{display:block;font-family:var(--f-brush);color:var(--red);font-size:1.3rem;letter-spacing:.3em;margin-bottom:12px}
+.rays .sec-h .kj,.teal .sec-h .kj{color:var(--gold)}
+.sub{max-width:58ch;margin:20px auto 0;color:var(--ink-2);font-size:1.05rem}
+.rays .sub,.teal .sub{color:var(--cream)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:64px;align-items:center}
+@media (max-width:860px){.about{grid-template-columns:minmax(0,1fr);gap:40px}}
+.pol{position:relative;margin:0;background:#fff;padding:12px 12px 46px;box-shadow:0 18px 34px rgba(43,13,10,.32);transform:rotate(var(--r,-2.5deg))}
+.pol img{width:100%;aspect-ratio:var(--ar,4/5);object-fit:cover}
+.pol figcaption{position:absolute;left:0;right:0;bottom:11px;text-align:center;font-family:var(--f-brush);font-weight:700;font-size:1.15rem;color:var(--ink-2)}
+.pol::before{content:"";position:absolute;left:50%;top:-15px;width:112px;height:30px;margin-left:-56px;background:rgba(255,209,58,.85);transform:rotate(3deg);box-shadow:0 2px 4px rgba(0,0,0,.18)}
+.about .kj{font-family:var(--f-brush);color:var(--red);font-size:1.3rem;letter-spacing:.3em}
+.big{font-family:var(--f-disp);font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.16;color:var(--red);margin:6px 0 18px;text-shadow:0 2px 0 var(--gold)}
+.about p+p{margin-top:12px}
+.signs{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.sign{font-family:var(--f-disp);font-size:1.02rem;background:var(--red);color:var(--cream);padding:.4em 1em .3em;border-radius:8px;border:3px solid var(--ink);box-shadow:0 4px 0 var(--ink)}
+.sign.g{background:var(--gold);color:var(--ink)}
+
+/* menu */
+.tabbar{position:sticky;top:calc(var(--hh) + env(safe-area-inset-top,0px));z-index:40;margin-bottom:34px;padding-block:12px 14px;
+  background:linear-gradient(var(--cream) 82%,rgba(255,243,216,0))}
+.tabs{display:flex;gap:10px;overflow-x:auto;padding:6px 6px 10px;scrollbar-width:none;justify-content:safe center}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:0;font:inherit;font-family:var(--f-disp);font-size:1rem;letter-spacing:.03em;line-height:1.15;
+  padding:.45em 1.1em .35em;border:3px solid var(--ink);border-radius:14px;background:var(--paper);color:var(--ink);cursor:pointer;box-shadow:0 4px 0 var(--ink);transform:rotate(-1deg)}
+.tab:nth-child(even){transform:rotate(1deg)}
+.tab i{font-style:normal;font-family:var(--f-brush);font-weight:700;font-size:.82rem;color:var(--red);letter-spacing:.2em}
+.tab[aria-selected="true"]{background:var(--red);color:var(--cream);box-shadow:0 4px 0 var(--red-dd);transform:translateY(2px) rotate(0)}
+.tab[aria-selected="true"] i{color:var(--gold)}
+.intro-m{text-align:center;max-width:62ch;margin:0 auto 34px;font-size:1.05rem;color:var(--ink-2)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:40px 28px}
+.dish{position:relative;display:flex;flex-direction:column;background:var(--paper);border:3px solid var(--ink);border-radius:20px;box-shadow:7px 7px 0 var(--red);transition:transform .2s}
+.dish:hover{transform:translateY(-4px) rotate(-.5deg)}
+.dish .ph{position:relative;aspect-ratio:3/2;border-radius:16px 16px 0 0;overflow:hidden;background:var(--gold);border-bottom:3px solid var(--ink)}
+.dish .ph img{width:100%;height:100%;object-fit:cover}
+.dish .burst{left:-16px;top:-20px;width:92px;height:92px;font-size:1.35rem;z-index:3;transform:rotate(-9deg)}
+.dish .chips{position:absolute;right:10px;top:10px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:62%}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:900;padding:.2em .7em;border-radius:999px;border:2px solid var(--ink);background:#fff;color:var(--ink)}
+.chip.hot{color:var(--red)}.chip.veg{color:#1f7a3a}
+.chip svg{width:14px;height:14px}
+.dish .tx{padding:0 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.nm{position:relative;margin:-20px 10px 0 auto;max-width:92%;font-family:var(--f-disp);font-weight:400;font-size:1.12rem;letter-spacing:.03em;text-transform:uppercase;line-height:1.1;text-align:right;
+  background:var(--red);color:var(--cream);padding:.42em .85em .32em;border:2px solid var(--cream);outline:3px solid var(--ink);transform:rotate(-1.6deg);text-shadow:0 2px 0 var(--red-dd);overflow-wrap:anywhere}
+.nm em{font-style:normal;color:var(--gold);margin-left:.4em;white-space:nowrap}
+.dish p{font-size:.92rem;color:var(--ink-2);line-height:1.5}
+.al{font-size:.74rem;font-weight:700;letter-spacing:.06em;color:var(--mute);margin-top:auto;text-transform:uppercase}
+.note{margin-top:40px;padding:20px 22px;background:var(--paper);border:3px dashed var(--red);border-radius:16px;color:var(--ink-2);font-size:.95rem}
+.note strong{color:var(--red)}
+.note h4{font-family:var(--f-disp);font-weight:400;font-size:1.3rem;color:var(--red);margin-bottom:6px}
+.extras{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:2px 34px;margin-top:8px}
+.extras li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:2px dotted var(--pink);color:var(--ink)}
+.extras li span:last-child{color:var(--red);font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+.drinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px}
+.drink{background:var(--red-d);color:var(--cream);border:3px solid var(--ink);border-radius:20px;box-shadow:7px 7px 0 var(--gold-d);padding:22px 22px 14px}
+.drink h3{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--f-disp);font-weight:400;font-size:1.6rem;color:var(--gold);margin-bottom:8px}
+.drink h3 i{font-style:normal;font-family:var(--f-brush);font-size:1.1rem;letter-spacing:.2em;color:var(--pink)}
+.drink li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:2px dotted rgba(255,243,216,.35)}
+.drink li span:last-child{color:var(--gold);font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:34px 26px;align-items:start}
+.gal .pol:nth-child(1){grid-column:span 4;--r:-3deg}.gal .pol:nth-child(2){grid-column:span 4;--r:2deg;margin-top:26px}
+.gal .pol:nth-child(3){grid-column:span 4;--r:-1.5deg}.gal .pol:nth-child(4){grid-column:4 / span 5;--r:2.5deg;--ar:3/2}
+.gal .pol:nth-child(5){grid-column:span 4;--r:-2deg}
+@media (max-width:760px){.gal{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 18px}.gal .pol{grid-column:span 1!important;margin-top:0!important}.gal .pol:nth-child(4){grid-column:span 2!important}}
+.rays .pol figcaption{color:var(--ink-2)}
+
+/* rite */
+.rite{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:30px}
+.rite article{position:relative;background:var(--paper);border:3px solid var(--ink);border-radius:20px;box-shadow:7px 7px 0 var(--red);padding:30px 24px 26px;text-align:center}
+.rite .bigjp{font-family:var(--f-brush);font-weight:700;font-size:3.2rem;line-height:1.1;color:var(--red);margin-bottom:6px}
+.rite h3{font-family:var(--f-disp);font-weight:400;font-size:1.35rem;margin-bottom:8px}
+.rite p{color:var(--ink-2);font-size:.97rem}
+
+/* info */
+.info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+@media (max-width:860px){.info{grid-template-columns:minmax(0,1fr)}}
+.card{position:relative;background:var(--cream);border:3px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--gold);padding:30px;min-width:0;color:var(--ink)}
+.card h3{font-family:var(--f-disp);font-weight:400;font-size:1.7rem;color:var(--red);margin-bottom:14px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:10px 6px;border-bottom:2px dotted var(--pink);vertical-align:top}
+.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.today td{background:var(--gold);font-weight:900}
+.hours tr.today td:first-child{border-radius:10px 0 0 10px;padding-left:12px}.hours tr.today td:last-child{border-radius:0 10px 10px 0;padding-right:12px}
+.hours tr.off td:last-child{color:var(--red);font-weight:900}
+.addr{font-family:var(--f-disp);font-size:1.55rem;line-height:1.25;margin-bottom:14px}
+.phone{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 0 4px}
+.phone code{font:inherit;font-weight:900;font-size:1.25rem;user-select:all}
+.actions-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
+/* booking */
+.book{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:48px;align-items:start}
+@media (max-width:920px){.book{grid-template-columns:minmax(0,1fr);gap:34px}}
+.book .intro{color:var(--cream)}
+.book .intro .kj{font-family:var(--f-brush);color:var(--gold);letter-spacing:.3em;font-size:1.3rem}
+.book .intro h2{margin:8px 0 16px;font-family:var(--f-disp);font-weight:400;font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.05;color:var(--gold);text-shadow:0 3px 0 var(--red-dd)}
+.book .intro p{font-size:1.05rem}
+.facts{display:grid;gap:12px;margin-top:22px}
+.facts li{display:flex;gap:12px;align-items:flex-start}
+.facts svg{flex:0 0 auto;width:24px;height:24px;margin-top:2px}
+.wiz{position:relative;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:24px;box-shadow:9px 9px 0 var(--gold);overflow:hidden;min-width:0}
+.prog{display:grid;grid-template-columns:repeat(4,1fr);background:var(--red);padding:12px 8px 10px;border-bottom:3px solid var(--ink)}
+.prog button{font:inherit;background:none;border:0;padding:2px 2px;cursor:pointer;color:rgba(255,243,216,.75);font-weight:700;font-size:.82rem;display:flex;flex-direction:column;align-items:center;gap:4px;position:relative}
+.prog button::after{content:"";position:absolute;top:15px;left:calc(50% + 20px);right:calc(-50% + 20px);height:3px;background:rgba(255,243,216,.4)}
+.prog button:last-child::after{display:none}
+.prog button b{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;border:3px solid var(--cream);background:var(--red);color:var(--cream);font-family:var(--f-disp);font-weight:400;font-size:1rem}
+.prog button[aria-current="step"]{color:#fff}
+.prog button[aria-current="step"] b{background:var(--gold);color:var(--ink);border-color:var(--ink);box-shadow:0 0 0 3px var(--cream)}
+.prog button.done b{background:var(--cream);color:var(--red)}
+.prog button:disabled{cursor:default;opacity:.7}
+.sumbar{display:flex;gap:8px;flex-wrap:wrap;padding:14px 24px 0}
+.sumbar span{background:var(--gold);color:var(--ink);padding:.15em .85em;border-radius:999px;font-size:.84rem;font-weight:900;border:2px solid var(--ink)}
+.panel{padding:22px 24px 26px}
+.panel h3{font-family:var(--f-disp);font-weight:400;font-size:1.9rem;color:var(--red);line-height:1.1;margin-bottom:6px}
+.panel .sub2{color:var(--ink-2);font-size:.97rem;margin-bottom:22px}
+.stepper{display:flex;align-items:center;justify-content:center;gap:26px;margin:6px 0 20px}
+.stepper button{width:62px;height:62px;border-radius:50%;border:3px solid var(--ink);background:var(--paper);color:var(--red);font-family:var(--f-disp);font-size:2rem;cursor:pointer;line-height:1;box-shadow:0 4px 0 var(--ink)}
+.stepper button:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.stepper output{display:block;font-family:var(--f-disp);font-size:4.6rem;line-height:1;color:var(--ink);text-align:center;min-width:2ch;text-shadow:3px 3px 0 var(--gold)}
+.stepper small{display:block;text-align:center;color:var(--mute);font-weight:700}
+.chips-r{display:flex;gap:8px;flex-wrap:wrap}
+.opt{font:inherit;font-weight:700;padding:.5em 1em;border-radius:999px;border:3px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover{background:var(--cream-2)}
+.opt[aria-pressed="true"]{background:var(--gold);box-shadow:0 3px 0 var(--ink)}
+.quickp{justify-content:center;margin-bottom:22px}
+.warn{margin-top:14px;padding:12px 14px;border-radius:12px;background:#fff0c2;border:2px solid var(--gold-d);color:#5a3b00;font-size:.92rem}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;align-items:center}
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-h b{font-family:var(--f-disp);font-weight:400;font-size:1.35rem;text-transform:capitalize}
+.cal-h button{width:42px;height:42px;border-radius:50%;border:3px solid var(--ink);background:var(--paper);cursor:pointer;font-size:1.3rem;line-height:1;color:var(--ink)}
+.cal-h button:disabled{opacity:.3;cursor:default}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.cal .wd{text-align:center;font-size:.78rem;font-weight:900;color:var(--red);padding:6px 0}
+.cal button{aspect-ratio:1/1;border-radius:50%;border:2.5px solid transparent;background:transparent;font:inherit;font-weight:700;cursor:pointer;color:var(--ink);font-variant-numeric:tabular-nums;min-width:0;padding:0}
+.cal button:hover:not(:disabled){background:var(--cream-2);border-color:var(--ink)}
+.cal button:disabled{color:#cdb6a3;cursor:default;text-decoration:line-through;text-decoration-thickness:1px;font-weight:500}
+.cal button.today{border-color:var(--red)}
+.cal button[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--ink)}
+.legend{margin-top:12px;color:var(--mute);font-size:.88rem}
+.slots h4{font-family:var(--f-disp);font-weight:400;font-size:1.2rem;margin:16px 0 10px;display:flex;align-items:center;gap:10px;color:var(--ink)}
+.slots h4 small{font-family:var(--f-body);color:var(--mute);font-weight:500;font-size:.85rem}
+.slots .opt{min-width:82px;text-align:center;font-variant-numeric:tabular-nums}
+.slots .opt[aria-pressed="true"]{background:var(--red);color:#fff}
+.field{display:grid;gap:6px;margin-bottom:16px}
+.field label,.field .lb{font-weight:900;font-size:.92rem;color:var(--red)}
+.field input,.field textarea{font:inherit;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:12px;padding:.7em .9em;width:100%;min-width:0}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(31,143,128,.25)}
+.err{color:#a3162c;font-weight:900;font-size:.92rem;min-height:1.3em;margin-top:6px}
+.ticket{position:relative;margin-top:4px;background:#fff;border:3px dashed var(--red);border-radius:16px;padding:18px 20px;display:grid;gap:8px}
+.ticket .hd{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ticket .hd b{font-family:var(--f-disp);font-weight:400;font-size:1.3rem;color:var(--red)}
+.ticket .hd span{font-family:var(--f-brush);font-weight:700;font-size:1.5rem;color:var(--red)}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:4px 0 0}
+.ticket dt{color:var(--mute);font-size:.88rem;font-weight:700}
+.ticket dd{margin:0;font-weight:900;overflow-wrap:anywhere}
+.ticket .ref{font-size:.8rem;color:var(--mute);letter-spacing:.1em;font-weight:700}
+.sent{display:none;margin-top:16px;padding:14px 16px;border-radius:14px;background:#dff7e7;border:3px solid #1b8a4a;color:#0d3d20;font-size:.95rem}
+.sent.on{display:block}
+.fine{margin-top:12px;font-size:.84rem;color:var(--mute)}
+.pb{position:fixed;left:0;top:0;width:26px;height:26px;z-index:120;pointer-events:none}
+
+/* footer */
+footer{background:var(--red-dd);color:var(--cream);padding-block:54px 130px;border-top:5px solid var(--gold);font-size:.88rem;position:relative}
+.foot{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center}
+@media (max-width:640px){.foot{grid-template-columns:minmax(0,1fr)}}
+.foot img{width:120px;height:120px;border-radius:50%;box-shadow:0 0 0 4px var(--cream),0 0 0 7px var(--ink)}
+.foot .txt{display:grid;gap:12px;color:rgba(255,243,216,.86)}
+.foot strong{color:var(--gold)}
+.thanks{font-family:var(--f-brush);font-weight:700;font-size:1.6rem;color:var(--gold)}
+
+/* chat */
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:100;display:flex;align-items:center;gap:10px;
+  background:var(--cream);color:var(--ink);border:3px solid var(--ink);padding:6px 20px 6px 6px;border-radius:999px;font:inherit;font-family:var(--f-disp);font-size:1rem;cursor:pointer;box-shadow:0 5px 0 var(--ink),0 12px 22px rgba(0,0,0,.3)}
+.fab img{width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 2px var(--ink)}
+.chat{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:100;width:min(390px,calc(100vw - 32px));
+  height:min(580px,calc(100dvh - 130px));display:flex;flex-direction:column;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:8px 8px 0 var(--red),0 24px 50px rgba(0,0,0,.4)}
+.chat header{background:var(--red);color:var(--cream);padding:12px 14px;display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--ink)}
+.chat header img{width:48px;height:48px;border-radius:50%;box-shadow:0 0 0 3px var(--cream)}
+.chat header b{flex:1;font-family:var(--f-disp);font-weight:400;font-size:1.3rem;line-height:1.1}
+.chat header small{display:block;font-family:var(--f-body);font-weight:500;font-size:.78rem;opacity:.92;margin-top:2px}
+.chat header button{background:none;border:0;color:var(--cream);font-size:1.7rem;cursor:pointer;line-height:1}
+.msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--cream-2)}
+.m{max-width:86%;padding:10px 14px;font-size:.94rem;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;border-radius:16px;border:2.5px solid var(--ink)}
+.m.bot{background:#fff;align-self:flex-start;border-bottom-left-radius:4px}
+.m.me{background:var(--gold);align-self:flex-end;border-bottom-right-radius:4px;font-weight:700}
+.m.typing{display:flex;gap:5px;padding:13px 14px}
+.m.typing i{width:8px;height:8px;border-radius:50%;background:var(--red);animation:dot 1s infinite}
+.m.typing i:nth-child(2){animation-delay:.15s}.m.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+.quick{display:flex;gap:8px;flex-wrap:wrap;padding:8px 14px 12px;background:var(--cream-2);border-top:2px dotted var(--pink)}
+.quick button,.quick a{font:inherit;font-weight:700;font-size:.85rem;background:#fff;color:var(--ink);border:2.5px solid var(--ink);padding:.3em .9em;cursor:pointer;text-decoration:none;border-radius:999px}
+.quick a.wa{background:var(--wa);color:var(--wa-ink)}
+.quick button:hover{background:var(--gold)}
+.chat form{display:flex;gap:8px;padding:10px;border-top:3px solid var(--ink);background:var(--cream)}
+.chat form input{flex:1;font:inherit;border:3px solid var(--ink);border-radius:999px;padding:.55em 1em;min-width:0;background:#fff;color:var(--ink)}
+.chat form button{background:var(--red);border:3px solid var(--ink);color:var(--cream);font-family:var(--f-disp);font-size:.95rem;padding:0 18px;border-radius:999px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.chat[hidden],.sumbar:empty{display:none}.panel[hidden]{display:none}
+
+:root{--burst:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Cpolygon points=%2250.0%2C2.0 56.1%2C11.5 64.8%2C4.3 67.7%2C15.3 78.2%2C11.2 77.6%2C22.4 88.8%2C21.8 84.7%2C32.3 95.7%2C35.2 88.5%2C43.9 98.0%2C50.0 88.5%2C56.1 95.7%2C64.8 84.7%2C67.7 88.8%2C78.2 77.6%2C77.6 78.2%2C88.8 67.7%2C84.7 64.8%2C95.7 56.1%2C88.5 50.0%2C98.0 43.9%2C88.5 35.2%2C95.7 32.3%2C84.7 21.8%2C88.8 22.4%2C77.6 11.2%2C78.2 15.3%2C67.7 4.3%2C64.8 11.5%2C56.1 2.0%2C50.0 11.5%2C43.9 4.3%2C35.2 15.3%2C32.3 11.2%2C21.8 22.4%2C22.4 21.8%2C11.2 32.3%2C15.3 35.2%2C4.3 43.9%2C11.5%22 fill=%22%23ffd13a%22 stroke=%22%232b0d0a%22 stroke-width=%223%22 stroke-linejoin=%22round%22/%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2232%22 fill=%22none%22 stroke=%22%23e9a50c%22 stroke-width=%222%22 stroke-dasharray=%223 3%22/%3E%3C/svg%3E");--awning:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2272%22 height=%2246%22 viewBox=%220 0 72 46%22%3E%3Cpath d=%22M0%2C0H36V28A18%2C18 0 0 1 0%2C28Z%22 fill=%22%23c9202c%22 stroke=%22%232b0d0a%22 stroke-width=%222.5%22/%3E%3Cpath d=%22M36%2C0H72V28A18%2C18 0 0 1 36%2C28Z%22 fill=%22%23fff3d8%22 stroke=%22%232b0d0a%22 stroke-width=%222.5%22/%3E%3C/svg%3E")}
+.mrow{display:flex;gap:8px;align-items:flex-end;align-self:flex-start;max-width:92%}.mrow img{width:30px;height:30px;border-radius:50%;border:2px solid var(--ink);flex:0 0 auto;background:var(--cream)}.mrow .m{max-width:none}
+.tip{margin-top:20px;padding:14px 16px;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--gold);font-weight:700}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="sak" viewBox="-20 -20 40 40"><g fill="#ffb3cb" stroke="#d9507f" stroke-width="1.5" stroke-linejoin="round">
+      <path d="M0,0 C-9,-6 -9,-17 0,-19 C9,-17 9,-6 0,0Z"/><path transform="rotate(72)" d="M0,0 C-9,-6 -9,-17 0,-19 C9,-17 9,-6 0,0Z"/><path transform="rotate(144)" d="M0,0 C-9,-6 -9,-17 0,-19 C9,-17 9,-6 0,0Z"/><path transform="rotate(216)" d="M0,0 C-9,-6 -9,-17 0,-19 C9,-17 9,-6 0,0Z"/><path transform="rotate(288)" d="M0,0 C-9,-6 -9,-17 0,-19 C9,-17 9,-6 0,0Z"/></g><circle r="3.2" fill="#ffd13a" stroke="#d9507f" stroke-width="1"/></symbol>
+    <symbol id="chili" viewBox="0 0 24 24"><path d="M15 3c1 0 2 .6 2.4 1.5M6 8c3-3 9-2 12 2 1.800 2.600 1.500 6-.800 8.500-2 2.200-6 2.500-9 .8C4 17 3 12 6 8Z" fill="#e02a2a" stroke="#58091a" stroke-width="1.600" stroke-linejoin="round"/><path d="M15 3c-.5 2-1 3.500-2.500 4.500" fill="none" stroke="#1f8f2e" stroke-width="2.400" stroke-linecap="round"/></symbol>
+    <symbol id="leaf" viewBox="0 0 24 24"><path d="M4 20C4 9 11 4 21 4c0 10-5 17-14 17M4 20c3-5 6-8 10-10" fill="#6ccf7a" stroke="#1f7a3a" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></g></symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 2l2.600 6.200L21 9l-5 4.300 1.600 6.700L12 16.400 6.400 20l1.600-6.700L3 9l6.400-.800Z" fill="#ffd13a" stroke="#2b0d0a" stroke-width="1.600" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="top bleed" id="top">
+  <div class="wrap in">
+    <a class="brand" href="#top" aria-label="Caveau Ramen Alassio"><img src="img/logo.png" alt="" width="56" height="56"><span><b>CAVEAU RAMEN</b><small>ALASSIO</small></span></a>
+    <nav class="nav" data-i18n-aria="nav_aria" aria-label="Menu">
+      <a class="l" href="#menu" data-i18n="nav_menu"></a>
+      <a class="l" href="#sala" data-i18n="nav_sala"></a>
+      <a class="l" href="#dove" data-i18n="nav_hours"></a>
+      <a class="btn sm red" href="#prenota" data-i18n="nav_book"></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero bleed">
+  <div class="street" id="street" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <div class="noren" aria-hidden="true"><div class="beam"></div><div class="nr-row" id="norow"></div></div>
+  <div class="lan l1" aria-hidden="true"></div><div class="lan l2" aria-hidden="true"></div><div class="lan r1" aria-hidden="true"></div><div class="lan r2" aria-hidden="true"></div>
+
+  <div class="hero-grid">
+    <div>
+      <div class="status" id="status"><i></i><span></span></div>
+      <h1 class="sr">Caveau Ramen Alassio</h1>
+      <svg class="logotype" viewBox="0 0 620 230" aria-hidden="true">
+        <defs>
+          <text id="lt1" x="310" y="118" font-size="128" text-anchor="middle" textLength="590" lengthAdjust="spacingAndGlyphs" font-family="'Lilita One','Arial Rounded MT Bold','Arial Black',sans-serif" font-weight="900">CAVEAU</text>
+          <text id="lt2" x="310" y="206" font-size="96" text-anchor="middle" textLength="440" lengthAdjust="spacingAndGlyphs" font-family="'Lilita One','Arial Rounded MT Bold','Arial Black',sans-serif" font-weight="900">RAMEN</text>
+        </defs>
+        <g stroke-linejoin="round">
+          <use href="#lt1" transform="translate(0 8)" fill="#2b0d0a" stroke="#2b0d0a" stroke-width="30"/>
+          <use href="#lt2" transform="translate(0 8)" fill="#2b0d0a" stroke="#2b0d0a" stroke-width="26"/>
+          <use href="#lt1" fill="#fff3d8" stroke="#fff3d8" stroke-width="20"/>
+          <use href="#lt2" fill="#fff3d8" stroke="#fff3d8" stroke-width="18"/>
+          <use href="#lt1" fill="#d6212d" stroke="#8f1220" stroke-width="2"/>
+          <use href="#lt2" fill="#ffc400" stroke="#b97800" stroke-width="2"/>
+        </g>
+      </svg>
+      <div><span class="ribbon">ラーメン · 餃子 · どら焼き</span></div>
+      <p class="lead" data-i18n="hero_lead"></p>
+      <div class="cta">
+        <a class="btn red" href="#prenota" data-i18n="cta_book"></a>
+        <a class="btn" href="#menu" data-i18n="cta_menu"></a>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="poster"><img src="img/poster-chars.jpg" alt="" width="1205" height="739"><div class="awning" aria-hidden="true"></div></div>
+      <img class="medal" src="img/logo.png" alt="Caveau Ramen" width="134" height="134">
+      <div class="sticker"><img src="img/kazan-real.jpg" alt="Kazan Ramen" style="object-position:50% 60%" width="176" height="176"></div>
+      <div class="burst k" aria-hidden="true"><span><span id="kprice">15,90</span><small>€</small></span></div>
+      <div class="kl" aria-hidden="true">Kazan Ramen</div>
+      <svg class="fl a" aria-hidden="true"><use href="#sak"/></svg><svg class="fl b" aria-hidden="true"><use href="#sak"/></svg><svg class="fl c" aria-hidden="true"><use href="#sak"/></svg><svg class="fl d" aria-hidden="true"><use href="#sak"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="band bleed" aria-hidden="true"><div id="bandin"></div></div>
+
+<section class="sec dots2 bleed"><div class="wrap about">
+  <figure class="pol"><img src="img/loc-sakura-tree.jpg" alt="" loading="lazy" data-i18n-alt="about_alt"><figcaption data-i18n="about_cap"></figcaption></figure>
+  <div>
+    <span class="kj" data-i18n="about_kick"></span>
+    <p class="big" data-i18n="about_big"></p>
+    <p data-i18n="about_p1"></p>
+    <p data-i18n="about_p2"></p>
+    <div class="signs" aria-hidden="true"><span class="sign">ラーメン</span><span class="sign g">餃子</span><span class="sign">丼</span><span class="sign g">どら焼き</span></div>
+  </div>
+</div></section>
+
+<section id="menu" class="sec edge dots bleed" style="--edge:var(--cream-2)"><div class="wrap">
+  <div class="sec-h"><span class="kj" data-i18n="menu_kick"></span><h2 class="ribbon" data-i18n="menu_h"></h2><p class="sub" data-i18n="menu_p"></p></div>
+  <div class="tabbar"><div class="tabs" role="tablist" id="tabs" data-i18n-aria="menu_tabs"></div></div>
+  <div id="menu-out"></div>
+</div></section>
+
+<section id="sala" class="sec edge rays bleed" style="--edge:var(--cream)"><div class="wrap">
+  <div class="sec-h"><span class="kj" data-i18n="gal_kick"></span><h2 class="ribbon" data-i18n="gal_h"></h2><p class="sub" data-i18n="gal_p"></p></div>
+  <div class="gal">
+    <figure class="pol"><img src="img/loc-sakura-tree.jpg" alt="" loading="lazy" data-i18n-alt="about_alt" style="object-position:50% 40%"><figcaption data-i18n="gal_c1"></figcaption></figure>
+    <figure class="pol"><img src="img/kazan-real.jpg" alt="Kazan Ramen" loading="lazy" style="object-position:50% 60%"><figcaption>Kazan Ramen</figcaption></figure>
+    <figure class="pol"><img src="img/katsu-real.jpg" alt="Chicken Katsu Ramen" loading="lazy" style="object-position:50% 58%"><figcaption>Chicken Katsu Ramen</figcaption></figure>
+    <figure class="pol"><img src="img/dandan-real.jpg" alt="Dan Dan Ramen" loading="lazy" style="object-position:50% 62%"><figcaption>Dan Dan Ramen</figcaption></figure>
+    <figure class="pol"><img src="img/dorayaki-real.jpg" alt="Dorayaki Azuki" loading="lazy" style="object-position:50% 42%"><figcaption>Dorayaki Azuki</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="rito" class="sec edge dots2 bleed" style="--edge:var(--red-d)"><div class="wrap">
+  <div class="sec-h"><span class="kj" data-i18n="rite_kick"></span><h2 class="ribbon" data-i18n="rite_h"></h2><p class="sub" data-i18n="rite_p"></p></div>
+  <div class="rite">
+    <article><div class="bigjp" aria-hidden="true">頂きます</div><h3>Itadakimasu</h3><p data-i18n="rite_1"></p></article>
+    <article><div class="bigjp" aria-hidden="true">ズズッ</div><h3 data-i18n="rite_2t"></h3><p data-i18n="rite_2"></p></article>
+    <article><div class="bigjp" aria-hidden="true">ご馳走様</div><h3>Gochisosama</h3><p data-i18n="rite_3"></p></article>
+  </div>
+</div></section>
+
+<section id="dove" class="sec edge teal bleed" style="--edge:var(--cream-2)"><div class="wrap">
+  <div class="sec-h"><span class="kj" data-i18n="info_kick"></span><h2 class="ribbon" data-i18n="info_h"></h2></div>
+  <div class="info">
+    <div class="card"><h3 data-i18n="hours_h"></h3><table class="hours" id="hours"></table></div>
+    <div class="card"><h3 data-i18n="where_h"></h3>
+      <p class="addr">Via Leonardo da Vinci, 189<br>17021 Alassio (SV)</p>
+      <div class="phone"><code>375 798 0807</code><button class="btn sm paper" id="copy" type="button" data-i18n="copy"></button></div>
+      <p style="color:var(--mute)"><span data-i18n="landline"></span> 0182 636115</p>
+      <div class="actions-row">
+        <a class="btn red" href="https://www.google.com/maps/search/?api=1&query=Caveau+Ramen+Via+Leonardo+da+Vinci+189+Alassio" target="_blank" rel="noopener" data-i18n="maps"></a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="prenota" class="sec edge rays bleed" style="--edge:var(--teal-d)"><div class="wrap book">
+  <div class="intro">
+    <span class="kj" data-i18n="book_kick"></span>
+    <h2 data-i18n="book_h"></h2>
+    <p data-i18n="book_p"></p>
+    <p class="tip" data-i18n="book_tip"></p>
+    <ul class="facts">
+      <li><svg aria-hidden="true"><use href="#star"/></svg><span data-i18n="book_f1"></span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><span data-i18n="book_f2"></span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><span data-i18n="book_f3"></span></li>
+    </ul>
+  </div>
+
+  <div class="wiz" id="wiz">
+    <div class="prog" id="prog">
+      <button type="button" data-s="1" aria-current="step"><b>1</b><span data-i18n="st1"></span></button>
+      <button type="button" data-s="2" disabled><b>2</b><span data-i18n="st2"></span></button>
+      <button type="button" data-s="3" disabled><b>3</b><span data-i18n="st3"></span></button>
+      <button type="button" data-s="4" disabled><b>4</b><span data-i18n="st4"></span></button>
+    </div>
+    <div class="sumbar" id="sumbar"></div>
+
+    <div class="panel" data-p="1">
+      <h3 data-i18n="p1_h"></h3><p class="sub2" data-i18n="p1_sub"></p>
+      <div class="stepper">
+        <button type="button" id="minus" data-i18n-aria="less">−</button>
+        <div><output id="pplout" aria-live="polite">2</output><small id="pplun"></small></div>
+        <button type="button" id="plus" data-i18n-aria="more">+</button>
+      </div>
+      <div class="chips-r quickp" id="quickp"></div>
+      <div class="warn" id="bigwarn" hidden data-i18n="p1_big"></div>
+      <div class="actions"><span></span><button class="btn red" type="button" id="n1" data-i18n="next"></button></div>
+    </div>
+
+    <div class="panel" data-p="2" hidden>
+      <h3 data-i18n="p2_h"></h3><p class="sub2" data-i18n="p2_sub"></p>
+      <div class="cal-h"><button type="button" id="cprev" data-i18n-aria="prevm">‹</button><b id="cmonth"></b><button type="button" id="cnext" data-i18n-aria="nextm">›</button></div>
+      <div class="cal" id="cal"></div>
+      <p class="legend" data-i18n="p2_leg"></p>
+      <div class="actions"><button class="btn sm paper" type="button" data-back="1" data-i18n="back"></button><span></span></div>
+    </div>
+
+    <div class="panel" data-p="3" hidden>
+      <h3 data-i18n="p3_h"></h3><p class="sub2" id="dayline"></p>
+      <div class="slots" id="slots"></div>
+      <div class="actions"><button class="btn sm paper" type="button" data-back="2" data-i18n="back"></button><span></span></div>
+    </div>
+
+    <div class="panel" data-p="4" hidden>
+      <h3 data-i18n="p4_h"></h3><p class="sub2" data-i18n="p4_sub"></p>
+      <div class="field"><label for="f-name" data-i18n="f_name"></label><input id="f-name" autocomplete="given-name" maxlength="40" data-i18n-ph="f_name_ph"></div>
+      <div class="field"><span class="lb" data-i18n="f_needs"></span>
+        <div class="chips-r" id="tags">
+          <button type="button" class="opt" aria-pressed="false" data-t="Compleanno" data-i18n="t_bday"></button>
+          <button type="button" class="opt" aria-pressed="false" data-t="Seggiolone" data-i18n="t_chair"></button>
+          <button type="button" class="opt" aria-pressed="false" data-t="Allergie o intolleranze" data-i18n="t_allergy"></button>
+          <button type="button" class="opt" aria-pressed="false" data-t="Tonkotsu senza glutine" data-i18n="t_gf"></button>
+        </div></div>
+      <div class="field"><label for="f-note" data-i18n="f_note"></label><textarea id="f-note" rows="2" maxlength="240" data-i18n-ph="f_note_ph"></textarea></div>
+      <div class="ticket" aria-live="polite">
+        <div class="hd"><b data-i18n="tk_h"></b><span aria-hidden="true">予約</span></div>
+        <dl id="tk"></dl><div class="ref" id="tkref"></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+      <div class="actions"><button class="btn sm paper" type="button" data-back="3" data-i18n="back"></button>
+        <a class="btn wa" id="send" href="#prenota" aria-disabled="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2Zm5.200 14.200c-.2.600-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800 0-1.300.7-1.900.9-2.200.2-.3.5-.3.700-.3h.5c.2 0 .4 0 .6.500.2.600.8 1.900.9 2 .1.200.1.300 0 .500-.1.200-.2.300-.3.500l-.4.500c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.400.3.100.500.100.700-.1.200-.2.800-.9 1-1.200.2-.3.400-.2.700-.1.300.1 1.700.8 2 1 .3.100.5.200.600.3.100.2.100.700-.1 1.300Z"/></svg><span data-i18n="send"></span></a></div>
+      <div class="sent" id="sent" role="status"><span data-i18n-html="sent"></span>
+        <div style="margin-top:10px"><button class="btn sm paper" type="button" id="cpmsg" data-i18n="cpmsg"></button></div></div>
+      <p class="fine" data-i18n="fine"></p>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer class="bleed"><div class="wrap">
+  <div class="foot">
+    <img src="img/logo.png" alt="Caveau Ramen" width="120" height="120" loading="lazy">
+    <div class="txt">
+      <div class="thanks" aria-hidden="true">ごちそうさまでした。またお越しください。</div>
+      <div><strong>Caveau Ramen</strong> · Via Leonardo da Vinci 189, 17021 Alassio (SV) · 375 798 0807 · 0182 636115</div>
+      <div data-i18n="foot_all"></div>
+      <div data-i18n="foot_note"></div>
+    </div>
+  </div>
+</div></footer>
+
+<button class="fab" id="fab" aria-expanded="false" aria-controls="chat"><img src="img/logo.png" alt="" width="46" height="46"><span data-i18n="fab"></span></button>
+<div class="chat" id="chat" hidden role="dialog" data-i18n-aria="chat_aria">
+  <header><img src="img/logo.png" alt="" width="48" height="48"><b>Naruto<small data-i18n="chat_sub"></small></b><button id="x" type="button" data-i18n-aria="close" aria-label="Chiudi">×</button></header>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <div class="quick" id="quick"></div>
+  <form id="cf"><input id="ci" data-i18n-ph="chat_ph" autocomplete="off" aria-label="Chat"><button type="submit" data-i18n="chat_send"></button></form>
+</div>
+
+<script>
+const WA='393757980807';
+const LANGS=['it'];
+const LOC={it:'it-IT'};
+const L='it';
+const ix=()=>0;
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,'0');
+const wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+
+/* ---------- UI strings [it,en,fr,de] ---------- */
+const S={
+nav_aria:['Menu principale','Main menu','Menu principal','Hauptmenü'],lang_aria:['Lingua','Language','Langue','Sprache'],
+nav_menu:['Menu','Menu','Carte','Speisekarte'],nav_sala:['La sala','The venue','La salle','Das Lokal'],nav_hours:['Orari','Hours','Horaires','Öffnungszeiten'],nav_book:['Prenota','Book','Réserver','Reservieren'],
+open_now:['Aperto ora','Open now','Ouvert','Jetzt geöffnet'],closed_now:['Chiuso ora','Closed now','Fermé','Jetzt geschlossen'],
+closes:['chiude alle {h}','closes at {h}','ferme à {h}','schließt um {h} Uhr'],reopens:['riapre alle {h}','reopens at {h}','rouvre à {h}','öffnet um {h} Uhr'],
+reopen_tom:['riapre domani alle 12:00','reopens tomorrow at 12:00','rouvre demain à 12h','öffnet morgen um 12:00 Uhr'],reopen_day:['riapre {d} alle 12:00','reopens {d} at 12:00','rouvre {d} à 12h','öffnet {d} um 12:00 Uhr'],
+hero_lead:['Ramen fumanti, gyoza croccanti e dorayaki soffici, in una sala con il ciliegio in fiore, lanterne e neon. Si sta bene, si mangia tanto: meglio prenotare.','Steaming ramen, crispy gyoza and fluffy dorayaki in a room with a cherry tree in bloom, lanterns and neon lights. Come hungry, and book ahead.','Ramen fumants, gyoza croustillants et dorayaki moelleux dans une salle avec un cerisier en fleurs, des lanternes et des néons. Venez avec de l’appétit et pensez à réserver.','Dampfender Ramen, knusprige Gyoza und fluffige Dorayaki in einem Lokal mit blühendem Kirschbaum, Laternen und Neonlicht. Kommen Sie hungrig und reservieren Sie vorher.'],
+cta_book:['Prenota un tavolo','Book a table','Réserver une table','Tisch reservieren'],cta_menu:['Guarda il menu','See the menu','Voir la carte','Zur Speisekarte'],
+band_closed:['Chiuso il martedì','Closed on Tuesdays','Fermé le mardi','Dienstag Ruhetag'],
+about_kick:['Il locale','The place','Le lieu','Das Lokal'],about_alt:['Angolo della sala con ciliegio in fiore','Corner of the dining room with a cherry tree in bloom','Coin de la salle avec un cerisier en fleurs','Ecke des Lokals mit blühendem Kirschbaum'],
+about_cap:['Il ciliegio in fiore in sala','The cherry tree in bloom inside','Le cerisier en fleurs dans la salle','Der blühende Kirschbaum im Lokal'],
+about_big:['Entri e sei in un ramen-ya di Tokyo, con un ciliegio in fiore in mezzo alla sala.','Step in and you’re in a Tokyo ramen-ya, with a cherry tree in bloom in the middle of the room.','On entre et on se retrouve dans un ramen-ya de Tokyo, avec un cerisier en fleurs au milieu de la salle.','Man tritt ein und steht in einem Tokioter Ramen-ya, mit einem blühenden Kirschbaum mitten im Raum.'],
+about_p1:['Mattoni rossi, lanterne di carta, scaffali pieni di statuine e neon colorati. Ramen con brodo di carne o di soia, don, gyoza, takoyaki e dorayaki da assaggiare con calma.','Red bricks, paper lanterns, shelves full of figurines and colorful neon. Ramen in pork or soy broth, donburi, gyoza, takoyaki and dorayaki to enjoy at your own pace.','Briques rouges, lanternes en papier, étagères remplies de figurines et néons colorés. Ramen au bouillon de porc ou de soja, donburi, gyoza, takoyaki et dorayaki à savourer sans se presser.','Rote Backsteine, Papierlaternen, Regale voller Figuren und bunte Neonlichter. Ramen mit Schweine- oder Sojabrühe, Donburi, Gyoza, Takoyaki und Dorayaki zum Genießen.'],
+about_p2:['Nei giorni di maggiore affluenza il locale si riempie: prenotare il tavolo è la cosa migliore.','On busy days the place fills up: booking a table is the best idea.','Les jours d’affluence, la salle se remplit : mieux vaut réserver une table.','An stark besuchten Tagen ist das Lokal voll: am besten reservieren Sie einen Tisch.'],
+menu_kick:['品書き · Il menu','品書き · The menu','品書き · La carte','品書き · Die Speisekarte'],menu_h:['Cosa si mangia','What we serve','Ce que l’on mange','Was es zu essen gibt'],
+menu_p:['Scegli una sezione. Coperto 2 € a persona.','Pick a section. Cover charge €2 per person.','Choisissez une rubrique. Couvert 2 € par personne.','Wählen Sie eine Rubrik. Gedeck 2 € pro Person.'],menu_tabs:['Sezioni del menu','Menu sections','Rubriques de la carte','Rubriken der Speisekarte'],
+gal_kick:['写真 · La sala e i piatti','写真 · The venue and the dishes','写真 · La salle et les plats','写真 · Lokal und Gerichte'],gal_h:['Foto dal locale','Photos from the restaurant','Photos du restaurant','Fotos aus dem Lokal'],
+gal_p:['Scatti fatti dai clienti a pranzo e a cena.','Photos taken by guests at lunch and dinner.','Photos prises par des clients au déjeuner et au dîner.','Fotos von Gästen beim Mittag- und Abendessen.'],
+gal_c1:['Sotto il ciliegio','Under the cherry tree','Sous le cerisier','Unter dem Kirschbaum'],gal_c2:['Neon, lanterne e mattoni rossi','Neon, lanterns and red bricks','Néons, lanternes et briques rouges','Neon, Laternen und rote Backsteine'],
+rite_kick:['ラーメンの作法 · Come si mangia','ラーメンの作法 · How to enjoy it','ラーメンの作法 · Comment déguster','ラーメンの作法 · So wird gegessen'],rite_h:['Il rito del ramen','The ramen ritual','Le rituel du ramen','Das Ramen-Ritual'],
+rite_p:['Tre piccole abitudini giapponesi che rendono la ciotola ancora più buona.','Three small Japanese habits that make the bowl even better.','Trois petites habitudes japonaises qui rendent le bol encore meilleur.','Drei kleine japanische Gewohnheiten, die die Schüssel noch besser machen.'],
+rite_1:['Si dice a mani giunte prima di mangiare, per ringraziare per il cibo.','Said with hands together before eating, to give thanks for the food.','Se dit les mains jointes avant de manger, pour remercier pour le repas.','Wird vor dem Essen mit gefalteten Händen gesagt, als Dank für das Essen.'],
+rite_2t:['Sorbire i noodles','Slurp the noodles','Siroter les nouilles','Nudeln schlürfen'],
+rite_2:['In Giappone mangiare il ramen facendo rumore è normale. Aiuta a raffreddare i noodles e a sentire meglio il profumo del brodo.','In Japan, eating ramen noisily is normal. It cools the noodles and lets you smell the broth better.','Au Japon, manger le ramen bruyamment est normal. Cela refroidit les nouilles et libère mieux le parfum du bouillon.','In Japan ist es normal, Ramen laut zu essen. So kühlen die Nudeln ab und man riecht die Brühe besser.'],
+rite_3:['Si dice a fine pasto per ringraziare. Il brodo si può bere fino all’ultimo sorso.','Said at the end of the meal to say thanks. You can drink the broth to the last sip.','Se dit à la fin du repas pour remercier. On peut boire le bouillon jusqu’à la dernière gorgée.','Wird am Ende der Mahlzeit gesagt, um sich zu bedanken. Die Brühe darf bis zum letzten Schluck getrunken werden.'],
+info_kick:['営業 · Orari e posizione','営業 · Hours and location','営業 · Horaires et adresse','営業 · Öffnungszeiten und Lage'],info_h:['Quando e dove','When and where','Quand et où','Wann und wo'],
+hours_h:['Orari di apertura','Opening hours','Horaires d’ouverture','Öffnungszeiten'],where_h:['Come trovarci','How to find us','Comment nous trouver','So finden Sie uns'],
+closed:['Chiuso','Closed','Fermé','Geschlossen'],copy:['Copia','Copy','Copier','Kopieren'],copied:['Copiato','Copied','Copié','Kopiert'],landline:['Fisso:','Landline:','Fixe :','Festnetz:'],
+maps:['Apri in Google Maps','Open in Google Maps','Ouvrir dans Google Maps','In Google Maps öffnen'],
+book_kick:['予約 · Prenotazione','予約 · Booking','予約 · Réservation','予約 · Reservierung'],book_h:['Riserva il tuo tavolo','Book your table','Réservez votre table','Reservieren Sie Ihren Tisch'],
+book_p:['Quattro passi veloci: quanti siete, quando venite, come vi chiamate. Alla fine premi il pulsante e si apre WhatsApp con la richiesta già scritta, pronta da inviare al titolare.','Four quick steps: how many of you, when you come, your name. At the end, press the button and WhatsApp opens with the request already written, ready to send to the owner.','Quatre étapes rapides : combien vous êtes, quand vous venez, votre nom. À la fin, appuyez sur le bouton : WhatsApp s’ouvre avec la demande déjà rédigée, prête à envoyer au patron.','Vier kurze Schritte: Personenzahl, Zeitpunkt, Ihr Name. Am Ende tippen Sie auf den Button – WhatsApp öffnet sich mit der fertigen Anfrage an den Inhaber.'],
+book_tip:['Chi è stato da noi consiglia di prenotare in anticipo, soprattutto il sabato e la domenica.','Guests recommend booking ahead, especially on Saturdays and Sundays.','Les clients conseillent de réserver à l’avance, surtout le samedi et le dimanche.','Gäste empfehlen, vorab zu reservieren, besonders samstags und sonntags.'],
+book_f1:['La prenotazione è confermata quando il titolare ti risponde su WhatsApp.','Your booking is confirmed when the owner replies on WhatsApp.','La réservation est confirmée quand le patron vous répond sur WhatsApp.','Die Reservierung gilt, sobald der Inhaber auf WhatsApp antwortet.'],
+book_f2:['Pranzo dalle 12:00 alle 14:30, cena dalle 19:00 alle 22:30. Martedì chiuso.','Lunch 12:00–14:30, dinner 19:00–22:30. Closed on Tuesdays.','Déjeuner de 12h à 14h30, dîner de 19h à 22h30. Fermé le mardi.','Mittagessen 12:00–14:30, Abendessen 19:00–22:30 Uhr. Dienstag geschlossen.'],
+book_f3:['Per gruppi numerosi il titolare ti scrive per organizzare i tavoli.','For large groups the owner will message you to arrange the tables.','Pour les grands groupes, le patron vous écrit pour organiser les tables.','Bei großen Gruppen meldet sich der Inhaber, um die Tische zu organisieren.'],
+st1:['Persone','Guests','Personnes','Personen'],st2:['Giorno','Day','Jour','Tag'],st3:['Orario','Time','Heure','Uhrzeit'],st4:['I tuoi dati','Your details','Vos infos','Ihre Daten'],
+p1_h:['Quanti siete?','How many are you?','Combien êtes-vous ?','Wie viele sind Sie?'],p1_sub:['Conta anche i bambini.','Count children too.','Comptez aussi les enfants.','Kinder bitte mitzählen.'],
+guest1:['persona','guest','personne','Person'],guestN:['persone','guests','personnes','Personen'],less:['Una persona in meno','One guest less','Une personne de moins','Eine Person weniger'],more:['Una persona in più','One guest more','Une personne de plus','Eine Person mehr'],
+p1_big:['Siete un gruppo numeroso. Puoi proseguire: il titolare ti conferma la disponibilità e come sistemarvi.','You are a large group. You can continue: the owner will confirm availability and seating.','Vous êtes un grand groupe. Vous pouvez continuer : le patron confirmera la disponibilité et l’installation.','Sie sind eine große Gruppe. Sie können fortfahren: Der Inhaber bestätigt Verfügbarkeit und Sitzordnung.'],
+next:['Continua','Continue','Continuer','Weiter'],back:['Indietro','Back','Retour','Zurück'],
+p2_h:['Che giorno?','Which day?','Quel jour ?','Welcher Tag?'],p2_sub:['Il martedì siamo chiusi, i giorni barrati non sono disponibili.','We are closed on Tuesdays; crossed-out days are not available.','Fermé le mardi ; les jours barrés ne sont pas disponibles.','Dienstag ist geschlossen; durchgestrichene Tage sind nicht verfügbar.'],
+p2_leg:['Si può prenotare fino a tre mesi in anticipo.','You can book up to three months ahead.','Vous pouvez réserver jusqu’à trois mois à l’avance.','Sie können bis zu drei Monate im Voraus buchen.'],prevm:['Mese precedente','Previous month','Mois précédent','Vorheriger Monat'],nextm:['Mese successivo','Next month','Mois suivant','Nächster Monat'],
+p3_h:['A che ora?','What time?','À quelle heure ?','Um wie viel Uhr?'],lunch:['Pranzo','Lunch','Déjeuner','Mittagessen'],dinner:['Cena','Dinner','Dîner','Abendessen'],
+noslots:['Per oggi non ci sono più orari disponibili online. Scegli un altro giorno oppure scrivi al titolare.','No more slots are available online for today. Pick another day or message the owner.','Plus de créneaux en ligne pour aujourd’hui. Choisissez un autre jour ou écrivez au patron.','Für heute sind online keine Zeiten mehr frei. Wählen Sie einen anderen Tag oder schreiben Sie dem Inhaber.'],
+p4_h:['Ultimi dettagli','Last details','Derniers détails','Letzte Angaben'],p4_sub:['Ti serve solo il nome. Il numero di telefono lo vede il titolare da WhatsApp.','We only need your name. The owner sees your phone number on WhatsApp.','Seul le nom est nécessaire. Le patron voit votre numéro sur WhatsApp.','Wir brauchen nur Ihren Namen. Ihre Telefonnummer sieht der Inhaber in WhatsApp.'],
+f_name:['Nome','Name','Nom','Name'],f_name_ph:['Come ti chiami?','What is your name?','Comment vous appelez-vous ?','Wie heißen Sie?'],f_needs:['Hai qualche esigenza?','Any special requests?','Des demandes particulières ?','Besondere Wünsche?'],
+t_bday:['Compleanno','Birthday','Anniversaire','Geburtstag'],t_chair:['Seggiolone','High chair','Chaise haute','Kinderstuhl'],t_allergy:['Allergie o intolleranze','Allergies or intolerances','Allergies ou intolérances','Allergien oder Unverträglichkeiten'],t_gf:['Tonkotsu senza glutine','Gluten-free Tonkotsu','Tonkotsu sans gluten','Glutenfreies Tonkotsu'],
+f_note:['Note per il titolare','Notes for the owner','Notes pour le patron','Hinweise für den Inhaber'],f_note_ph:['Facoltativo','Optional','Facultatif','Optional'],
+tk_h:['Riepilogo','Summary','Récapitulatif','Zusammenfassung'],tk_guests:['Persone','Guests','Personnes','Personen'],tk_day:['Giorno','Day','Jour','Tag'],tk_time:['Ora','Time','Heure','Uhrzeit'],tk_name:['Nome','Name','Nom','Name'],tk_req:['Richieste','Requests','Demandes','Wünsche'],tk_notes:['Note','Notes','Notes','Hinweise'],tk_todo:['da inserire','to be entered','à saisir','bitte eintragen'],
+err_name:['Scrivi il tuo nome per continuare.','Please enter your name to continue.','Saisissez votre nom pour continuer.','Bitte geben Sie Ihren Namen ein.'],
+send:['Invia la richiesta su WhatsApp','Send the request on WhatsApp','Envoyer la demande sur WhatsApp','Anfrage per WhatsApp senden'],
+sent:['<strong>Richiesta pronta.</strong> Si è aperto WhatsApp con il messaggio scritto: premi Invia lì. Se non si è aperto, copia il messaggio e scrivi al 375 798 0807.','<strong>Request ready.</strong> WhatsApp opened with the message written: press Send there. If it did not open, copy the message and write to +39 375 798 0807.','<strong>Demande prête.</strong> WhatsApp s’est ouvert avec le message rédigé : appuyez sur Envoyer. S’il ne s’est pas ouvert, copiez le message et écrivez au +39 375 798 0807.','<strong>Anfrage bereit.</strong> WhatsApp hat sich mit der fertigen Nachricht geöffnet: Dort auf Senden tippen. Falls es sich nicht geöffnet hat, kopieren Sie die Nachricht und schreiben Sie an +39 375 798 0807.'],
+cpmsg:['Copia il messaggio','Copy the message','Copier le message','Nachricht kopieren'],cpdone:['Messaggio copiato','Message copied','Message copié','Nachricht kopiert'],
+fine:['Il messaggio parte dal tuo WhatsApp: la prenotazione vale quando il titolare conferma.','The message is sent from your WhatsApp: the booking counts when the owner confirms.','Le message part de votre WhatsApp : la réservation est valable quand le patron confirme.','Die Nachricht wird von Ihrem WhatsApp gesendet: Die Reservierung gilt, wenn der Inhaber bestätigt.'],
+fine_it:['Il messaggio al titolare è scritto in italiano.','The message to the owner is written in Italian.','Le message au patron est rédigé en italien.','Die Nachricht an den Inhaber wird auf Italienisch verfasst.'],
+foot_all:['Allergeni: 1 cereali con glutine, 2 soia, 3 uova, 4 semi di sesamo, 5 arachidi, 6 latte, 7 crostacei, 8 molluschi, 9 pesce, 10 frutta a guscio, 11 lupini, 12 senape, 13 sedano, 14 anidride solforosa e solfiti.','Allergens: 1 cereals containing gluten, 2 soy, 3 eggs, 4 sesame seeds, 5 peanuts, 6 milk, 7 crustaceans, 8 molluscs, 9 fish, 10 tree nuts, 11 lupin, 12 mustard, 13 celery, 14 sulphur dioxide and sulphites.','Allergènes : 1 céréales contenant du gluten, 2 soja, 3 œufs, 4 graines de sésame, 5 arachides, 6 lait, 7 crustacés, 8 mollusques, 9 poisson, 10 fruits à coque, 11 lupin, 12 moutarde, 13 céleri, 14 anhydride sulfureux et sulfites.','Allergene: 1 glutenhaltiges Getreide, 2 Soja, 3 Eier, 4 Sesam, 5 Erdnüsse, 6 Milch, 7 Krebstiere, 8 Weichtiere, 9 Fisch, 10 Schalenfrüchte, 11 Lupinen, 12 Senf, 13 Sellerie, 14 Schwefeldioxid und Sulfite.'],
+foot_note:['In questo ristorante non si possono escludere minime contaminazioni nell’aria di allergeni in fase di preparazione.','In this restaurant, minimal airborne contamination by allergens during preparation cannot be ruled out.','Dans ce restaurant, on ne peut exclure de minimes contaminations de l’air par des allergènes lors de la préparation.','In diesem Restaurant lassen sich geringste Kontaminationen der Luft mit Allergenen bei der Zubereitung nicht ausschließen.'],
+fab:['Chiedi a Naruto','Ask Naruto','Demander à Naruto','Frag Naruto'],chat_aria:['Naruto, assistente di Caveau Ramen','Naruto, Caveau Ramen assistant','Naruto, assistant de Caveau Ramen','Naruto, Assistent von Caveau Ramen'],
+chat_sub:['Il ninja del ramen di Caveau','Caveau’s ramen ninja','Le ninja du ramen de Caveau','Der Ramen-Ninja von Caveau'],chat_ph:['Scrivi qui…','Type here…','Écrivez ici…','Hier schreiben…'],chat_send:['Invia','Send','Envoyer','Senden'],close:['Chiudi chat','Close chat','Fermer le chat','Chat schließen'],
+c_greet:['Yosh! Sono Naruto, il ninja del ramen di Caveau. Chiedimi orari, menu e prezzi, oppure ti aiuto a prenotare il tuo tavolo.','Yosh! I’m Naruto, Caveau’s ramen ninja. Ask me about hours, menu and prices, or I’ll help you book your table.','Yosh ! Je suis Naruto, le ninja du ramen de Caveau. Demandez-moi les horaires, la carte et les prix, ou je vous aide à réserver.','Yosh! Ich bin Naruto, der Ramen-Ninja von Caveau. Fragen Sie mich nach Öffnungszeiten, Speisekarte und Preisen, oder ich helfe Ihnen beim Reservieren.'],
+c_hours:['Orari','Hours','Horaires','Öffnungszeiten'],c_menu:['Menu e prezzi','Menu and prices','Carte et prix','Speisekarte und Preise'],c_spicy:['Piccante o vegetariano','Spicy or vegetarian','Épicé ou végétarien','Scharf oder vegetarisch'],c_allergy:['Allergie','Allergies','Allergies','Allergien'],c_where:['Dove siamo','Where we are','Où nous trouver','So finden Sie uns'],
+c_form:['Apri il modulo di prenotazione','Open the booking form','Ouvrir le formulaire de réservation','Buchungsformular öffnen'],c_owner:['Scrivi al titolare su WhatsApp','Message the owner on WhatsApp','Écrire au patron sur WhatsApp','Dem Inhaber auf WhatsApp schreiben'],c_map:['Apri la mappa','Open the map','Ouvrir la carte','Karte öffnen'],c_back:['Torna alle domande','Back to questions','Retour aux questions','Zurück zu den Fragen'],
+c_book:['Per prenotare usa il modulo qui sotto: scegli persone, giorno e ora e invii la richiesta al titolare su WhatsApp.','To book, use the form below: choose guests, day and time and send the request to the owner on WhatsApp.','Pour réserver, utilisez le formulaire ci-dessous : choisissez le nombre de personnes, le jour et l’heure, puis envoyez la demande au patron sur WhatsApp.','Zum Reservieren nutzen Sie das Formular unten: Personen, Tag und Uhrzeit wählen und die Anfrage per WhatsApp an den Inhaber senden.'],
+c_hoursr:['Siamo aperti dalle 12:00 alle 15:00 e dalle 19:00 alle 23:00. Il martedì siamo chiusi.','We are open 12:00–15:00 and 19:00–23:00. Closed on Tuesdays.','Nous sommes ouverts de 12h à 15h et de 19h à 23h. Fermé le mardi.','Wir haben von 12:00 bis 15:00 und von 19:00 bis 23:00 Uhr geöffnet. Dienstag ist Ruhetag.'],
+c_wherer:['Via Leonardo da Vinci 189, 17021 Alassio (SV).\nTelefono 375 798 0807, fisso 0182 636115.','Via Leonardo da Vinci 189, 17021 Alassio (SV), Italy.\nPhone +39 375 798 0807, landline +39 0182 636115.','Via Leonardo da Vinci 189, 17021 Alassio (SV), Italie.\nTéléphone +39 375 798 0807, fixe +39 0182 636115.','Via Leonardo da Vinci 189, 17021 Alassio (SV), Italien.\nTelefon +39 375 798 0807, Festnetz +39 0182 636115.'],
+c_spicyr:['Piccanti: Dan Dan, Kazan, Spicy Yakitori e Spicy Miso. Vegetariano: Yasai Ramen (11,50 €), più Goma Wakame, Edamame, Patatine fritte e Gyoza Vege.','Spicy: Dan Dan, Kazan, Spicy Yakitori and Spicy Miso. Vegetarian: Yasai Ramen (€11.50), plus Goma Wakame, Edamame, French fries and Vege Gyoza.','Épicés : Dan Dan, Kazan, Spicy Yakitori et Spicy Miso. Végétarien : Yasai Ramen (11,50 €), plus Goma Wakame, Edamame, frites et Gyoza Vege.','Scharf: Dan Dan, Kazan, Spicy Yakitori und Spicy Miso. Vegetarisch: Yasai Ramen (11,50 €), außerdem Goma Wakame, Edamame, Pommes frites und Vege-Gyoza.'],
+c_allergyr:['Ogni piatto ha l’elenco degli allergeni nel menu. Il Tonkotsu Ramen senza glutine si ordina su prenotazione (14,50 €). In cucina non si possono escludere minime contaminazioni, quindi per allergie importanti scrivi al titolare prima di venire.','Every dish lists its allergens in the menu. The gluten-free Tonkotsu Ramen must be ordered in advance (€14.50). Traces cannot be ruled out in the kitchen, so for serious allergies please message the owner before visiting.','Chaque plat indique ses allergènes dans la carte. Le Tonkotsu Ramen sans gluten se commande à l’avance (14,50 €). Des traces ne peuvent pas être exclues en cuisine : en cas d’allergie importante, écrivez au patron avant de venir.','Bei jedem Gericht stehen die Allergene in der Speisekarte. Das glutenfreie Tonkotsu Ramen bestellen Sie bitte im Voraus (14,50 €). Spuren lassen sich in der Küche nicht ausschließen – bei schweren Allergien schreiben Sie dem Inhaber bitte vorab.'],
+c_kids:['C’è il Menù Baby a 9 €: riso bianco, 2 takoyaki, torikaraage, patatine fritte e salsa teriyaki. Nel modulo di prenotazione puoi chiedere il seggiolone.','There is a Kids Menu for €9: white rice, 2 takoyaki, torikaraage, French fries and teriyaki sauce. You can request a high chair in the booking form.','Il y a un Menu Enfant à 9 € : riz blanc, 2 takoyaki, torikaraage, frites et sauce teriyaki. Vous pouvez demander une chaise haute dans le formulaire.','Es gibt ein Kindermenü für 9 €: weißer Reis, 2 Takoyaki, Torikaraage, Pommes frites und Teriyaki-Sauce. Im Formular können Sie einen Kinderstuhl anfragen.'],
+c_menur:['I ramen vanno da 11,50 € (Yasai) a 15,90 € (Kazan). Donburi 9,90 € e Chicken Dry Noodles 12,90 €. Antipasti da 3 €, gyoza 5,50–6 €, dessert da 4,50 €. Coperto 2 € a persona.','Ramen range from €11.50 (Yasai) to €15.90 (Kazan). Donburi €9.90 and Chicken Dry Noodles €12.90. Starters from €3, gyoza €5.50–6, desserts from €4.50. Cover charge €2 per person.','Les ramen vont de 11,50 € (Yasai) à 15,90 € (Kazan). Donburi 9,90 € et Chicken Dry Noodles 12,90 €. Entrées dès 3 €, gyoza 5,50–6 €, desserts dès 4,50 €. Couvert 2 € par personne.','Ramen kosten von 11,50 € (Yasai) bis 15,90 € (Kazan). Donburi 9,90 € und Chicken Dry Noodles 12,90 €. Vorspeisen ab 3 €, Gyoza 5,50–6 €, Desserts ab 4,50 €. Gedeck 2 € pro Person.'],
+c_hello:['Yosh! Cosa ti serve?','Yosh! What do you need?','Yosh ! De quoi avez-vous besoin ?','Yosh! Was brauchen Sie?'],
+c_unknown:['Su questo non ho una risposta sicura e non voglio inventare. Scrivi al titolare e ti risponde lui.','I don’t have a reliable answer for that and I won’t make one up. Message the owner and he’ll reply.','Je n’ai pas de réponse sûre et je ne veux rien inventer. Écrivez au patron, il vous répondra.','Dafür habe ich keine sichere Antwort und möchte nichts erfinden. Schreiben Sie dem Inhaber, er antwortet Ihnen.'],
+tab_ramen:['Ramen','Ramen','Ramen','Ramen'],tab_don:['Donburi e Noodles','Donburi & Noodles','Donburi & Nouilles','Donburi & Nudeln'],tab_ant:['Antipasti','Starters','Entrées','Vorspeisen'],tab_gyoza:['Gyoza','Gyoza','Gyoza','Gyoza'],tab_oni:['Onigiri e Baby','Onigiri & Kids','Onigiri & Enfants','Onigiri & Kinder'],tab_des:['Dessert','Desserts','Desserts','Desserts'],tab_bev:['Bevande','Drinks','Boissons','Getränke'],
+hot:['Piccante','Spicy','Épicé','Scharf'],veg:['Vegetariano','Vegetarian','Végétarien','Vegetarisch'],
+don_intro:['Il donburi (o don) è una ciotola di riso bianco con carne, verdure e uovo sopra: un piatto unico, sostanzioso e saporito.','A donburi (or don) is a bowl of white rice topped with meat, vegetables and egg: a hearty, flavorful one-bowl meal.','Le donburi (ou don) est un bol de riz blanc garni de viande, de légumes et d’œuf : un plat unique, copieux et savoureux.','Ein Donburi (oder Don) ist eine Schüssel weißer Reis mit Fleisch, Gemüse und Ei: ein sättigendes, würziges Ein-Teller-Gericht.'],
+gf_note:['<strong>Senza glutine su prenotazione:</strong> Tonkotsu Ramen senza glutine, 14,50 €. Brodo di carne con chashu, mais, alghe, porro, naruto, alga nori (allergeni 2,3,4,9).','<strong>Gluten-free on request:</strong> gluten-free Tonkotsu Ramen, €14.50. Pork broth with chashu, corn, seaweed, leek, naruto, nori (allergens 2,3,4,9).','<strong>Sans gluten sur réservation :</strong> Tonkotsu Ramen sans gluten, 14,50 €. Bouillon de porc avec chashu, maïs, algues, poireau, naruto, algue nori (allergènes 2,3,4,9).','<strong>Glutenfrei auf Vorbestellung:</strong> glutenfreies Tonkotsu Ramen, 14,50 €. Schweinebrühe mit Chashu, Mais, Algen, Lauch, Naruto, Nori (Allergene 2,3,4,9).'],
+extras_h:['Extra topping','Extra toppings','Suppléments','Extra-Toppings'],
+dess_note:['<strong>Dessert Bindi:</strong> chiedi al personale la carta dei dolci.','<strong>Dessert Bindi:</strong> ask our staff for the dessert menu.','<strong>Dessert Bindi :</strong> demandez la carte des desserts au personnel.','<strong>Dessert Bindi:</strong> Fragen Sie unser Personal nach der Dessertkarte.'],
+alg:['Allergeni','Allergens','Allergènes','Allergene'],and:['e','and','et','und'],with:['con','with','avec','mit'],
+d_bev:['Bevande','Drinks','Boissons','Getränke'],d_caf:['Caffè','Coffee','Cafés','Kaffee'],d_ama:['Amari e grappe','Bitters & grappa','Amers & grappa','Bitter & Grappa']
+};
+const tr=k=>{const a=S[k];return a?a[ix()]:k};
+const trs=a=>Array.isArray(a)?(a[ix()]??a[0]):a;
+const sub=(s,o)=>s.replace(/\{(\w+)\}/g,(_,k)=>o[k]);
+
+/* ---------- ingredient vocabulary [it,en,fr,de] ---------- */
+const ING={
+chashu:['chashu','chashu pork','chashu de porc','Chashu-Schweinefleisch'],ragu:['ragù di maiale','pork ragù','ragù de porc','Schweineragout'],sprouts:['germogli di soia','soy sprouts','germes de soja','Sojasprossen'],
+egg:['uovo marinato','marinated egg','œuf mariné','mariniertes Ei'],eggs:['uova marinate','marinated eggs','œufs marinés','marinierte Eier'],leek:['porro','leek','poireau','Lauch'],naruto:['naruto','naruto fish cake','naruto','Naruto-Fischkuchen'],
+nori:['alga nori','nori seaweed','algue nori','Nori-Alge'],seaweed:['alghe','seaweed','algues','Algen'],corn:['mais','corn','maïs','Mais'],bamboo:['bambù marinato','marinated bamboo shoots','pousses de bambou marinées','marinierte Bambussprossen'],
+pakchoi:['pak choi','pak choi','pak choï','Pak Choi'],katsu:['cotoletta di pollo fritto','fried chicken cutlet','escalope de poulet frit','frittiertes Hähnchenschnitzel'],skewers:['spiedini di pollo','chicken skewers','brochettes de poulet','Hähnchenspieße'],
+shrimp:['gamberone','king prawn','gambas','Riesengarnele'],prawns:['mazzancolle','prawns','crevettes','Garnelen'],broccoli:['broccoli','broccoli','brocolis','Brokkoli'],peppers:['peperoni grigliati','grilled peppers','poivrons grillés','gegrillte Paprika'],
+tofu:['tofu fritto','fried tofu','tofu frit','frittierter Tofu'],hamburger:['hamburger','hamburger patty','steak haché','Hacksteak'],egg0:['uovo','egg','œuf','Ei'],curry:['curry','curry','curry','Curry'],burrata:['burrata','burrata','burrata','Burrata'],
+norip:['polvere di alga nori','nori seaweed powder','poudre d’algue nori','Nori-Algenpulver'],rice:['riso bianco','white rice','riz blanc','weißer Reis'],torik:['torikaraage','torikaraage','torikaraage','Torikaraage'],potato:['patate','potatoes','pommes de terre','Kartoffeln'],
+currys:['salsa curry','curry sauce','sauce curry','Currysauce'],tempura:['tempura di gambero','prawn tempura','tempura de gambas','Garnelen-Tempura'],lotus:['radice di loto','lotus root','racine de lotus','Lotuswurzel'],
+porkc:['cotoletta di maiale','pork cutlet','côtelette de porc','Schweineschnitzel'],onion:['cipolla','onion','oignon','Zwiebel'],ginger:['zenzero','ginger','gingembre','Ingwer'],terichick:['pollo in salsa teriyaki','chicken in teriyaki sauce','poulet sauce teriyaki','Hähnchen in Teriyaki-Sauce'],
+chive:['cipollotto','spring onion','ciboule','Frühlingszwiebel'],beef:['fettine di manzo','sliced beef','fines tranches de bœuf','dünne Rindfleischscheiben'],soys:['salsa di soia','soy sauce','sauce soja','Sojasauce'],pegg:['uova in camicia','poached eggs','œufs pochés','pochierte Eier'],pegg1:['uovo in camicia','poached egg','œuf poché','pochiertes Ei'],
+sesames:['salsa base di sesamo','sesame-based sauce','sauce au sésame','Sesamsauce']
+};
+const BR={
+pork:['Brodo di carne di maiale','Pork broth','Bouillon de porc','Schweinebrühe'],soy:['Brodo di soia','Soy broth','Bouillon de soja','Sojabrühe'],misopork:['Brodo di maiale e miso','Pork and miso broth','Bouillon de porc et miso','Schweine-Miso-Brühe'],
+spicysoy:['Brodo di soia e salsa piccante','Soy broth with spicy sauce','Bouillon de soja et sauce piquante','Sojabrühe mit scharfer Sauce'],spicymiso:['Brodo di maiale, miso e salsa piccante','Pork and miso broth with spicy sauce','Bouillon de porc, miso et sauce piquante','Schweine-Miso-Brühe mit scharfer Sauce'],
+dandan:['Poco brodo di carne e salsa base di sesamo piccante','A little meat broth and spicy sesame-based sauce','Peu de bouillon de viande et sauce pimentée au sésame','Wenig Fleischbrühe und scharfe Sesamsauce'],
+dry:['Ramen senza brodo','Brothless ramen','Ramen sans bouillon','Ramen ohne Brühe']
+};
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+function list(keys,i){const a=keys.map(k=>ING[k][i]);return a.length>1?a.slice(0,-1).join(', ')+' '+S.and[i]+' '+a[a.length-1]:a[0]}
+const rd=(b,l,al)=>LANGS.map((_,i)=>`${BR[b][i]} ${S.with[i]} ${list(l,i)}. ${S.alg[i]} ${al}.`);
+const dd=(l,al)=>LANGS.map((_,i)=>`${cap(list(l,i))}.${al?' '+S.alg[i]+' '+al+'.':''}`);
+const T=(a,b,c,d)=>[a,b,c,d];
+
+/* ---------- menu data: [name, price, desc[4], img, tag, hotLevel, objectPos] ---------- */
+const M=[
+{id:'ramen',items:[
+ ['Dan Dan Ramen',13.5,rd('dandan',['ragu','egg','leek'],'1,3,4,9'),'dandan-real','hot',2,'50% 62%'],
+ ['Ebi Dango Ramen',14.5,rd('soy',['shrimp','prawns','seaweed','egg','leek','naruto','nori'],'1,2,3,7'),'ai-ebi'],
+ ['Kazan Ramen',15.9,rd('pork',['chashu','ragu','sprouts','eggs','leek','naruto','nori'],'1,2,3,4,9'),'kazan-real','hot',1,'50% 60%'],
+ ['Chicken Katsu Ramen',12.5,rd('soy',['katsu','sprouts','bamboo','pakchoi','egg','leek','naruto','nori'],'1,2,3,9'),'katsu-real','',0,'50% 58%'],
+ ['Spicy Yakitori Ramen',13.5,rd('spicysoy',['skewers','sprouts','bamboo','pakchoi','egg','leek','naruto','nori'],'1,2,3,4,9'),'ai-spicyyakitori','hot',2],
+ ['Spicy Miso Ramen',13.5,rd('spicymiso',['chashu','ragu','corn','egg','leek','naruto','nori'],'1,2,3,4,9'),'ai-spicymiso','hot',2],
+ ['Tonkotsu Ramen',12.5,rd('pork',['chashu','corn','seaweed','leek','egg','naruto','nori'],'1,2,3,4,9'),'ai-tonkotsu'],
+ ['Yasai Ramen',11.5,rd('soy',['corn','sprouts','broccoli','peppers','bamboo','tofu','leek'],'1,2,3,4'),'ai-yasai','veg'],
+ ['Miso Ramen',12.5,rd('misopork',['chashu','peppers','seaweed','egg','leek','naruto','nori'],'1,2,3,4,9'),'ai-miso']
+],note:'gf_note',extras:true},
+{id:'don',intro:'don_intro',items:[
+ ['Hanbagu Curry Don',9.9,dd(['hamburger','egg0','curry','burrata','norip','rice'],'1,2,3,4,8'),'don-hanbagu'],
+ ['Golden Curry Rice',9.9,dd(['torik','potato','currys','norip','rice'],'1,2,3,4,6,9'),'don-golden'],
+ ['Tempura Ebi Curry Don',9.9,dd(['tempura','egg0','lotus','curry','burrata','norip','rice'],'1,2,3,6,7,11'),'don-tempura'],
+ ['Tonkatsu Don',9.9,dd(['porkc','egg0','onion','broccoli','ginger','nori','rice'],'1,2,3,4'),'don-tonkatsu'],
+ ['Teriyaki Chicken Don',9.9,dd(['terichick','egg0','onion','broccoli','ginger','chive','nori','rice'],'1,2,3,4'),'don-teriyaki'],
+ ['Niu Don',9.9,dd(['beef','onion','soys','leek','pegg','rice'],'1,2,3,4,9'),'don-niu'],
+ ['Chicken Dry Noodles',12.9,LANGS.map((_,i)=>`${BR.dry[i]} ${S.with[i]} ${list(['sesames','torik','seaweed','corn','sprouts','leek','pegg1'],i)}. ${S.alg[i]} 1,2,3,4.`),'ai-drynoodles']
+]},
+{id:'ant',items:[
+ ['Goma Wakame',3.5,T('Insalata di alghe con sesamo e spezie. Allergeni 4.','Seaweed salad with sesame and spices. Allergens 4.','Salade d’algues au sésame et aux épices. Allergènes 4.','Algensalat mit Sesam und Gewürzen. Allergene 4.'),'ai-wakame','veg'],
+ ['Edamame',4,T('Fagioli di soia bolliti al vapore con sale marino. Allergeni 2.','Steamed soybeans with sea salt. Allergens 2.','Fèves de soja cuites à la vapeur au sel marin. Allergènes 2.','Gedämpfte Sojabohnen mit Meersalz. Allergene 2.'),'ai-edamame','veg'],
+ [T('Patatine fritte','French fries','Frites','Pommes frites'),3,T('Patatine con sale marino. Allergeni 1.','French fries with sea salt. Allergens 1.','Frites au sel marin. Allergènes 1.','Pommes frites mit Meersalz. Allergene 1.'),'ai-patatine','veg'],
+ [T('Patatine con cheddar e bacon','Fries with cheddar and bacon','Frites cheddar et bacon','Pommes mit Cheddar und Speck'),5,T('Patatine fritte con salsa cheddar e bacon. Allergeni 1,6.','French fries with cheddar sauce and bacon. Allergens 1,6.','Frites avec sauce cheddar et bacon. Allergènes 1,6.','Pommes frites mit Cheddarsauce und Speck. Allergene 1,6.'),'ai-patatinecheddar'],
+ [T('Torikaraage 4 pz','Torikaraage ×4','Torikaraage ×4','Torikaraage ×4'),6,T('Bocconcini di pollo fritto con salsa maionese e polvere piccante. Allergeni 1,3,4.','Fried chicken bites with mayonnaise sauce and spicy powder. Allergens 1,3,4.','Bouchées de poulet frit, sauce mayonnaise et poudre pimentée. Allergènes 1,3,4.','Frittierte Hähnchenstücke mit Mayonnaise und scharfem Pulver. Allergene 1,3,4.'),'ai-torikaraage','hot',1],
+ [T('Coscia Karaage 2 pz','Karaage Drumstick ×2','Pilon Karaage ×2','Karaage-Keule ×2'),6,T('Coscia di pollo marinato fritto con salsa maionese e polvere piccante. Allergeni 1,3.','Fried marinated chicken drumstick with mayonnaise sauce and spicy powder. Allergens 1,3.','Pilon de poulet mariné frit, sauce mayonnaise et poudre pimentée. Allergènes 1,3.','Frittierte marinierte Hähnchenkeule mit Mayonnaise und scharfem Pulver. Allergene 1,3.'),'ai-coscia','hot',1],
+ [T('Yakitori 2 pz','Yakitori ×2','Yakitori ×2','Yakitori ×2'),6,T('Spiedini di pollo con salsa teriyaki, porro e sesamo. Allergeni 1,2,4.','Chicken skewers with teriyaki sauce, leek and sesame. Allergens 1,2,4.','Brochettes de poulet, sauce teriyaki, poireau et sésame. Allergènes 1,2,4.','Hähnchenspieße mit Teriyaki-Sauce, Lauch und Sesam. Allergene 1,2,4.'),'ai-yakitori'],
+ [T('Takoyaki 4 pz','Takoyaki ×4','Takoyaki ×4','Takoyaki ×4'),5.5,T('Polpette di polpo fritte con maionese, salsa takoyaki, katsuobushi e polvere di alghe. Allergeni 1,2,3,6,8,9.','Fried octopus balls with mayonnaise, takoyaki sauce, katsuobushi and seaweed powder. Allergens 1,2,3,6,8,9.','Boulettes de poulpe frites, mayonnaise, sauce takoyaki, katsuobushi et poudre d’algues. Allergènes 1,2,3,6,8,9.','Frittierte Oktopusbällchen mit Mayonnaise, Takoyaki-Sauce, Katsuobushi und Algenpulver. Allergene 1,2,3,6,8,9.'),'ai-takoyaki']
+]},
+{id:'gyoza',items:[
+ [T('Gyoza Vege 4 pz','Vege Gyoza ×4','Gyoza Vege ×4','Vege-Gyoza ×4'),5.5,T('Ravioli di verdure fritti con salsa maionese vegana e polvere di alghe. Allergeni 1.','Fried vegetable dumplings with vegan mayonnaise and seaweed powder. Allergens 1.','Raviolis aux légumes frits, mayonnaise végane et poudre d’algues. Allergènes 1.','Gebratene Gemüse-Teigtaschen mit veganer Mayonnaise und Algenpulver. Allergene 1.'),'ai-gvege','veg'],
+ [T('Gyoza Chicken 4 pz','Chicken Gyoza ×4','Gyoza Poulet ×4','Hähnchen-Gyoza ×4'),5.5,T('Ravioli di carne di pollo fritti con salsa maionese e polvere piccante. Allergeni 1.','Fried chicken dumplings with mayonnaise sauce and spicy powder. Allergens 1.','Raviolis au poulet frits, sauce mayonnaise et poudre pimentée. Allergènes 1.','Gebratene Hähnchen-Teigtaschen mit Mayonnaise und scharfem Pulver. Allergene 1.'),'ai-gchicken','hot',1],
+ [T('Gyoza Bacon 4 pz','Bacon Gyoza ×4','Gyoza Bacon ×4','Speck-Gyoza ×4'),6,T('Ravioli di carne di pollo fritti con bacon, salsa cheddar e porro. Allergeni 1,6.','Fried chicken dumplings with bacon, cheddar sauce and leek. Allergens 1,6.','Raviolis au poulet frits, bacon, sauce cheddar et poireau. Allergènes 1,6.','Gebratene Hähnchen-Teigtaschen mit Speck, Cheddarsauce und Lauch. Allergene 1,6.'),'ai-gbacon'],
+ [T('Gyoza Spicy 4 pz','Spicy Gyoza ×4','Gyoza Spicy ×4','Scharfe Gyoza ×4'),6,T('Ravioli di carne di pollo fritti con salsa maionese e jalapeño. Allergeni 1,5.','Fried chicken dumplings with mayonnaise sauce and jalapeño. Allergens 1,5.','Raviolis au poulet frits, sauce mayonnaise et jalapeño. Allergènes 1,5.','Gebratene Hähnchen-Teigtaschen mit Mayonnaise und Jalapeño. Allergene 1,5.'),'ai-gspicy','hot',2]
+]},
+{id:'oni',items:[
+ [T('Onigiri Torikaraage Spicy 2 pz','Spicy Torikaraage Onigiri ×2','Onigiri Torikaraage Spicy ×2','Onigiri Torikaraage Spicy ×2'),6,T('Polpette triangolari di riso ripiene di bocconcini di pollo fritto, alghe e salsa spicy.','Triangular rice balls filled with fried chicken bites, seaweed and spicy sauce.','Boulettes de riz triangulaires farcies de bouchées de poulet frit, algues et sauce spicy.','Dreieckige Reisbällchen gefüllt mit frittierten Hähnchenstücken, Algen und scharfer Sauce.'),'ai-onigiri-spicy','hot',1],
+ [T('Onigiri Tonno 2 pz','Tuna Onigiri ×2','Onigiri Thon ×2','Thunfisch-Onigiri ×2'),6,T('Polpette triangolari di riso ripiene di tonno e cipolla, katsuobushi e maionese.','Triangular rice balls filled with tuna and onion, katsuobushi and mayonnaise.','Boulettes de riz triangulaires farcies au thon et à l’oignon, katsuobushi et mayonnaise.','Dreieckige Reisbällchen gefüllt mit Thunfisch und Zwiebel, Katsuobushi und Mayonnaise.'),'ai-onigiri-tonno'],
+ [T('Menù Baby','Kids Menu','Menu Enfant','Kindermenü'),9,T('Riso bianco con 2 pz di takoyaki, torikaraage, patatine fritte e salsa teriyaki. Allergeni 1,2,3,4,6,8,9.','White rice with 2 takoyaki, torikaraage, French fries and teriyaki sauce. Allergens 1,2,3,4,6,8,9.','Riz blanc avec 2 takoyaki, torikaraage, frites et sauce teriyaki. Allergènes 1,2,3,4,6,8,9.','Weißer Reis mit 2 Takoyaki, Torikaraage, Pommes frites und Teriyaki-Sauce. Allergene 1,2,3,4,6,8,9.'),'ai-baby']
+]},
+{id:'des',note:'dess_note',items:[
+ [T('Dorayaki Cioccolato','Chocolate Dorayaki','Dorayaki Chocolat','Schoko-Dorayaki'),5,T('Due soffici pancake giapponesi con crema al cioccolato.','Two fluffy Japanese pancakes with chocolate cream.','Deux moelleuses crêpes japonaises à la crème au chocolat.','Zwei fluffige japanische Pfannkuchen mit Schokoladencreme.'),'ai-dora-cioc'],
+ ['Dorayaki Azuki',6,T('Due soffici pancake giapponesi con crema di fagioli rossi.','Two fluffy Japanese pancakes with sweet red bean paste.','Deux moelleuses crêpes japonaises à la pâte de haricots rouges.','Zwei fluffige japanische Pfannkuchen mit süßer roter Bohnenpaste.'),'dorayaki-real','',0,'50% 42%'],
+ [T('Bao Dolce 2 pz','Sweet Bao ×2','Bao sucré ×2','Süße Bao ×2'),4.5,T('Panini al vapore con crema o fagioli rossi.','Steamed buns with cream or red beans.','Petits pains vapeur à la crème ou aux haricots rouges.','Gedämpfte Brötchen mit Creme oder roten Bohnen.'),'ai-bao'],
+ [T('Mochi Gelato 2 pz','Ice Cream Mochi ×2','Mochi glacé ×2','Mochi-Eis ×2'),5,T('Chiedi al personale i gusti disponibili.','Ask our staff which flavours are available.','Demandez au personnel les parfums disponibles.','Fragen Sie unser Personal nach den Sorten.'),'ai-mochi']
+]},
+{id:'bev',drinks:true}
+];
+const DRINKS=[
+['d_bev',[[T('Acqua naturale 75 cl','Still water 75 cl','Eau plate 75 cl','Stilles Wasser 75 cl'),3],[T('Acqua frizzante 75 cl','Sparkling water 75 cl','Eau gazeuse 75 cl','Sprudelwasser 75 cl'),3],['Coca 33 cl',3.5],['Coca Zero 33 cl',3.5],['Fanta 33 cl',3.5],['Sprite 33 cl',3.5],[T('Estathé limone 33 cl','Estathé lemon 33 cl','Estathé citron 33 cl','Estathé Zitrone 33 cl'),3],[T('Estathé pesca 33 cl','Estathé peach 33 cl','Estathé pêche 33 cl','Estathé Pfirsich 33 cl'),3],['Ocean Bomb 33 cl',4],[T('Tè gelsomino / verde caldo','Hot jasmine / green tea','Thé chaud jasmin / vert','Heißer Jasmin- / Grüntee'),4],[T('Birra Asahi 50 cl','Asahi beer 50 cl','Bière Asahi 50 cl','Asahi Bier 50 cl'),5],[T('Birra Kirin 50 cl','Kirin beer 50 cl','Bière Kirin 50 cl','Kirin Bier 50 cl'),5],[T('Birra Sapporo 50 cl','Sapporo beer 50 cl','Bière Sapporo 50 cl','Sapporo Bier 50 cl'),5],[T('Sake caldo 10 cl','Hot sake 10 cl','Saké chaud 10 cl','Heißer Sake 10 cl'),6]]],
+['d_caf',[[T('Caffè espresso','Espresso','Café espresso','Espresso'),1.5],[T('Caffè macchiato','Macchiato','Café noisette','Macchiato'),1.5],[T('Caffè decaffeinato','Decaf coffee','Café décaféiné','Entkoffeinierter Kaffee'),1.6],[T('Caffè corretto','Coffee with a shot of liquor','Café arrosé','Kaffee mit Schuss'),2],[T('Caffè Ginseng','Ginseng coffee','Café au ginseng','Ginseng-Kaffee'),1.8],['Cappuccino',1.8]]],
+['d_ama',[[T('Grappa di rosa','Rose grappa','Grappa à la rose','Rosen-Grappa'),3.5],[T('Grappa di bambù','Bamboo grappa','Grappa au bambou','Bambus-Grappa'),3.5],[T('Grappa di Ginseng','Ginseng grappa','Grappa au ginseng','Ginseng-Grappa'),3.5],[T('Grappa bianca','White grappa','Grappa blanche','Weiße Grappa'),3],[T('Liquore di prugna','Plum liqueur','Liqueur de prune','Pflaumenlikör'),3],['Montenegro',3.5],['Amaro del Capo',3.5],['Baileys',3.5],['Limoncello',3.5],['Sambuca',3.5]]]
+];
+const EXTRA=[[T('Chashu ×1','Chashu ×1','Chashu ×1','Chashu ×1'),2],[T('Torikaraage ×3','Torikaraage ×3','Torikaraage ×3','Torikaraage ×3'),3],[T('Yakitori ×1','Yakitori ×1','Yakitori ×1','Yakitori ×1'),3],[T('Tofu ×2','Tofu ×2','Tofu ×2','Tofu ×2'),2],[T('Naruto ×3','Naruto ×3','Naruto ×3','Naruto ×3'),.5],[T('Uovo marinato ×1','Marinated egg ×1','Œuf mariné ×1','Mariniertes Ei ×1'),1],[T('Cotoletta di pollo fritto ×1','Fried chicken cutlet ×1','Escalope de poulet frit ×1','Frittiertes Hähnchenschnitzel ×1'),3],['Pak choi',1],[T('Alghe','Seaweed','Algues','Algen'),1],[T('Mais','Corn','Maïs','Mais'),1],[T('Peperoni grigliati','Grilled peppers','Poivrons grillés','Gegrillte Paprika'),1],[T('Porro','Leek','Poireau','Lauch'),0],[T('Germogli di soia','Soy sprouts','Germes de soja','Sojasprossen'),1],[T('Ragù di maiale','Pork ragù','Ragù de porc','Schweineragout'),2]];
+
+const money=n=>new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',minimumFractionDigits:n%1?2:0,maximumFractionDigits:2}).format(n);
+const num=n=>new Intl.NumberFormat('it-IT',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2}).format(n);
+const ICO={chili:'<svg aria-hidden="true"><use href="#chili"/></svg>',leaf:'<svg aria-hidden="true"><use href="#leaf"/></svg>'};
+let curTab='ramen';
+function renderMenu(id){
+  curTab=id;const s=M.find(m=>m.id===id);
+  [...$('tabs').children].forEach(b=>b.setAttribute('aria-selected',String(b.dataset.id===id)));
+  let h='';
+  if(s.intro)h+=`<p class="intro-m">${tr(s.intro)}</p>`;
+  if(s.drinks){
+    h+='<div class="drinks">'+DRINKS.map(d=>`<div class="drink"><h3>${tr(d[0])}<i>${d[0]==='d_bev'?'飲物':d[0]==='d_caf'?'珈琲':'食後'}</i></h3><ul>${d[1].map(x=>`<li><span>${trs(x[0])}</span><span>${money(x[1])}</span></li>`).join('')}</ul></div>`).join('')+'</div>';
+  }else{
+    h+='<div class="menu-grid">'+s.items.map(([n,p,d,img,tag,hot,pos])=>{
+      const name=trs(n);
+      const ch=tag==='hot'?`<span class="chip hot">${ICO.chili.repeat(hot||1)}${tr('hot')}</span>`:tag==='veg'?`<span class="chip veg">${ICO.leaf}${tr('veg')}</span>`:'';
+      return `<article class="dish"><div class="ph"><img src="img/${img}.jpg" alt="${name}" loading="lazy" style="object-position:${pos||'50% 50%'}">${ch?`<div class="chips">${ch}</div>`:''}</div><div class="burst"><span>${num(p)}<small>€</small></span></div><div class="tx"><h3 class="nm">${name}</h3><p>${trs(d)}</p></div></article>`;
+    }).join('')+'</div>';
+    if(s.note)h+=`<div class="note">${tr(s.note)}</div>`;
+    if(s.extras)h+=`<div class="note"><h4>${tr('extras_h')}</h4><ul class="extras">${EXTRA.map(e=>`<li><span>${trs(e[0])}</span><span>${money(e[1])}</span></li>`).join('')}</ul></div>`;
+  }
+  $('menu-out').innerHTML=h;
+}
+const TABS=[['ramen','tab_ramen','拉麺'],['don','tab_don','丼'],['ant','tab_ant','前菜'],['gyoza','tab_gyoza','餃子'],['oni','tab_oni','握飯'],['des','tab_des','甘味'],['bev','tab_bev','飲物']];
+TABS.forEach(([id,k,kj])=>{const b=document.createElement('button');b.className='tab';b.type='button';b.setAttribute('role','tab');b.dataset.id=id;b.innerHTML=`<span>${tr(k)}</span><i aria-hidden="true">${kj}</i>`;b.onclick=()=>renderMenu(id);$('tabs').appendChild(b)});
+
+/* hours + status */
+const OPEN=[1,1,0,1,1,1,1],SPANS=[[720,900],[1140,1380]];
+function nowRome(){
+  const f=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const g=t=>f.find(p=>p.type===t).value;
+  return {wd:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),min:(+g('hour')%24)*60+(+g('minute'))};
+}
+const TODAY=new Date().toLocaleDateString('en-CA',{timeZone:'Europe/Rome'});
+const dayName=wd=>cap(new Intl.DateTimeFormat('it-IT',{weekday:'long',timeZone:'UTC'}).format(new Date(Date.UTC(2024,0,7+wd,12))));
+const hm=m=>pad(Math.floor(m/60))+':'+pad(m%60);
+function renderHours(){
+  const {wd}=nowRome();
+  $('hours').innerHTML=[1,2,3,4,5,6,0].map(d=>`<tr class="${d===wd?'today':''} ${OPEN[d]?'':'off'}"><td>${dayName(d)}</td><td>${OPEN[d]?'12:00–15:00<br>19:00–23:00':tr('closed')}</td></tr>`).join('');
+}
+function renderStatus(){
+  const {wd,min}=nowRome();let open=false,next='';
+  if(OPEN[wd]){for(const [a,b] of SPANS){if(min>=a&&min<b){open=true;next=sub(tr('closes'),{h:hm(b)})}}
+    if(!open){const nx=SPANS.find(([a])=>min<a);if(nx)next=sub(tr('reopens'),{h:hm(nx[0])})}}
+  if(!open&&!next){let d=(wd+1)%7,n=1;while(!OPEN[d]){d=(d+1)%7;n++}next=n===1?tr('reopen_tom'):sub(tr('reopen_day'),{d:dayName(d)})}
+  const el=$('status');el.className='status'+(open?'':' closed');el.querySelector('span').textContent=(open?tr('open_now'):tr('closed_now'))+', '+next;
+}
+$('copy').onclick=async e=>{
+  const b=e.currentTarget;try{await navigator.clipboard.writeText('3757980807');b.textContent=tr('copied')}catch(_){b.textContent='375 798 0807'}
+  setTimeout(()=>b.textContent=tr('copy'),1800);
+};
+
+/* booking wizard */
+const W={step:1,max:1,ppl:2,date:null,time:null,tags:new Set(),vy:+TODAY.slice(0,4),vm:+TODAY.slice(5,7)-1};
+const longDate=iso=>{const [y,m,d]=iso.split('-').map(Number);return new Intl.DateTimeFormat('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(Date.UTC(y,m-1,d,12)))};
+const shortDate=iso=>{const [y,m,d]=iso.split('-').map(Number);return new Intl.DateTimeFormat('it-IT',{weekday:'short',day:'numeric',month:'short',timeZone:'UTC'}).format(new Date(Date.UTC(y,m-1,d,12)))};
+const MAXISO=(()=>{const [y,m,d]=TODAY.split('-').map(Number);const t=new Date(Date.UTC(y,m-1,d+90,12));return t.getUTCFullYear()+'-'+pad(t.getUTCMonth()+1)+'-'+pad(t.getUTCDate())})();
+const guests=n=>n+' '+(n===1?tr('guest1'):tr('guestN'));
+function go(n,noScroll){
+  W.step=n;W.max=Math.max(W.max,n);
+  document.querySelectorAll('#wiz .panel').forEach(p=>p.hidden=+p.dataset.p!==n);
+  document.querySelectorAll('#prog button').forEach(b=>{const s=+b.dataset.s;
+    if(s===n)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');
+    b.classList.toggle('done',s<n);b.disabled=s>W.max});
+  sumbar();
+  if(n===2)renderCal();if(n===3)renderSlots();if(n===4)ticket();
+  if(!noScroll){const r=$('wiz').getBoundingClientRect();if(r.top<0)$('wiz').scrollIntoView({behavior:'smooth',block:'start'})}
+}
+document.querySelectorAll('#prog button').forEach(b=>b.onclick=()=>{if(!b.disabled)go(+b.dataset.s)});
+document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>go(+b.dataset.back));
+function sumbar(){const a=[];if(W.step>1)a.push(guests(W.ppl));if(W.date&&W.step>2)a.push(shortDate(W.date));if(W.time&&W.step>3)a.push(W.time);$('sumbar').innerHTML=a.map(x=>`<span>${x}</span>`).join('')}
+function setPpl(n){W.ppl=Math.max(1,Math.min(30,n));$('pplout').textContent=W.ppl;$('pplun').textContent=W.ppl===1?tr('guest1'):tr('guestN');$('bigwarn').hidden=W.ppl<9;[...$('quickp').children].forEach(c=>c.setAttribute('aria-pressed',String(+c.dataset.n===W.ppl)))}
+[1,2,3,4,5,6,8].forEach(n=>{const c=document.createElement('button');c.type='button';c.className='opt';c.dataset.n=n;c.textContent=n;c.setAttribute('aria-pressed','false');c.onclick=()=>setPpl(n);$('quickp').appendChild(c)});
+$('minus').onclick=()=>setPpl(W.ppl-1);$('plus').onclick=()=>setPpl(W.ppl+1);$('n1').onclick=()=>go(2);
+function renderCal(){
+  const y=W.vy,m=W.vm;
+  $('cmonth').textContent=new Intl.DateTimeFormat('it-IT',{month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(Date.UTC(y,m,1,12)));
+  const first=new Date(Date.UTC(y,m,1,12)),off=(first.getUTCDay()+6)%7,nd=new Date(Date.UTC(y,m+1,0,12)).getUTCDate();
+  let h=[1,2,3,4,5,6,0].map(d=>`<div class="wd">${new Intl.DateTimeFormat('it-IT',{weekday:'narrow',timeZone:'UTC'}).format(new Date(Date.UTC(2024,0,7+d,12)))}</div>`).join('')+'<span></span>'.repeat(off);
+  for(let d=1;d<=nd;d++){
+    const iso=`${y}-${pad(m+1)}-${pad(d)}`,wd=new Date(Date.UTC(y,m,d,12)).getUTCDay();
+    const dis=iso<TODAY||iso>MAXISO||!OPEN[wd];
+    h+=`<button type="button" data-d="${iso}" ${dis?'disabled':''} class="${iso===TODAY?'today':''}" aria-pressed="${W.date===iso}" aria-label="${longDate(iso)}${!OPEN[wd]?' (chiuso)':''}">${d}</button>`;
+  }
+  $('cal').innerHTML=h;
+  $('cal').querySelectorAll('button:not(:disabled)').forEach(b=>b.onclick=()=>{W.date=b.dataset.d;W.time=null;go(3)});
+  $('cprev').disabled=(y===+TODAY.slice(0,4)&&m<=+TODAY.slice(5,7)-1);
+  $('cnext').disabled=(y>+MAXISO.slice(0,4)||(y===+MAXISO.slice(0,4)&&m>=+MAXISO.slice(5,7)-1));
+}
+$('cprev').onclick=()=>{W.vm--;if(W.vm<0){W.vm=11;W.vy--}renderCal()};
+$('cnext').onclick=()=>{W.vm++;if(W.vm>11){W.vm=0;W.vy++}renderCal()};
+function renderSlots(){
+  $('dayline').textContent=longDate(W.date)+' · '+guests(W.ppl);
+  const limit=W.date===TODAY?nowRome().min+30:0;
+  let h='',any=false;
+  for(const [k,r,a,b] of [['lunch','12:00 – 14:30',720,870],['dinner','19:00 – 22:30',1140,1350]]){
+    const s=[];for(let m=a;m<=b;m+=30)if(m>=limit)s.push(m);if(!s.length)continue;any=true;
+    h+=`<h4>${tr(k)}<small>${r}</small></h4><div class="chips-r">${s.map(m=>`<button type="button" class="opt" data-t="${hm(m)}" aria-pressed="${W.time===hm(m)}">${hm(m)}</button>`).join('')}</div>`;
+  }
+  if(!any)h=`<div class="warn">${tr('noslots')}</div>`;
+  $('slots').innerHTML=h;
+  $('slots').querySelectorAll('.opt').forEach(c=>c.onclick=()=>{W.time=c.dataset.t;go(4)});
+}
+document.querySelectorAll('#tags .opt').forEach(c=>c.onclick=()=>{const t=c.dataset.t;if(W.tags.has(t))W.tags.delete(t);else W.tags.add(t);c.setAttribute('aria-pressed',String(W.tags.has(t)));ticket()});
+$('f-name').oninput=ticket;$('f-note').oninput=ticket;
+const ref=()=>'CAV-'+W.date.slice(8,10)+W.date.slice(5,7)+'-'+W.time.replace(':','')+'-'+W.ppl;
+function message(){
+  const name=$('f-name').value.trim(),note=$('f-note').value.trim(),tg=[...W.tags];
+  let m=`Ciao Caveau Ramen! Vorrei prenotare un tavolo.\n\nPersone: ${W.ppl}\nGiorno: ${longDate(W.date)}\nOra: ${W.time}\nNome: ${name||'—'}`;
+  if(tg.length)m+=`\nRichieste: ${tg.join(', ')}`;if(note)m+=`\nNote: ${note}`;
+  if(W.ppl>=9)m+='\nSiamo un gruppo numeroso, potete confermarmi la disponibilità?';
+  return m+`\n\nRif. ${ref()}\nGrazie!`;
+}
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function ticket(){
+  if(!W.date||!W.time)return;
+  const name=$('f-name').value.trim(),note=$('f-note').value.trim();
+  const tgl=[...document.querySelectorAll('#tags .opt')].filter(c=>W.tags.has(c.dataset.t)).map(c=>c.textContent);
+  const rows=[[tr('tk_guests'),W.ppl],[tr('tk_day'),longDate(W.date)],[tr('tk_time'),W.time],[tr('tk_name'),name?esc(name):tr('tk_todo')]];
+  if(tgl.length)rows.push([tr('tk_req'),tgl.join(', ')]);if(note)rows.push([tr('tk_notes'),esc(note)]);
+  $('tk').innerHTML=rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('');
+  $('tkref').textContent='Rif. '+ref();
+  const ok=!!name,a=$('send');a.setAttribute('aria-disabled',String(!ok));a.href=ok?wa(message()):'#prenota';
+  if(ok){a.target='_blank';a.rel='noopener';$('err').textContent=''}else a.removeAttribute('target');
+  $('sent').classList.remove('on');
+}
+function petalBurst(el){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const r=el.getBoundingClientRect();
+  for(let i=0;i<14;i++){
+    const p=document.createElement('div');p.className='pb';
+    p.innerHTML='<svg viewBox="-20 -20 40 40" width="26" height="26"><use href="#sak"/></svg>';
+    p.style.left=(r.left+r.width/2-13)+'px';p.style.top=(r.top+r.height/2-13)+'px';document.body.appendChild(p);
+    const a=Math.random()*Math.PI*2,d=70+Math.random()*130;
+    p.animate([{transform:'translate(0,0) rotate(0) scale(.5)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d+90}px) rotate(${Math.random()*540}deg) scale(1)`,opacity:0}],{duration:1100+Math.random()*600,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>p.remove();
+  }
+}
+$('send').onclick=e=>{const a=e.currentTarget;
+  if(a.getAttribute('aria-disabled')==='true'){e.preventDefault();$('err').textContent=tr('err_name');$('f-name').focus();return}
+  petalBurst(a);setTimeout(()=>$('sent').classList.add('on'),400)};
+$('cpmsg').onclick=async e=>{const b=e.currentTarget;
+  try{await navigator.clipboard.writeText(message());b.textContent=tr('cpdone')}catch(_){b.textContent='…'}
+  setTimeout(()=>b.textContent=tr('cpmsg'),2200)};
+
+/* chat: Naruto, avatar = logo del locale */
+const fab=$('fab'),chat=$('chat'),msgs=$('msgs'),quick=$('quick'),ci=$('ci');
+let started=false;
+function typing(){const r=document.createElement('div');r.className='mrow';r.innerHTML='<img src="img/logo.png" alt=""><div class="m bot typing"><i></i><i></i><i></i></div>';msgs.appendChild(r);msgs.scrollTop=msgs.scrollHeight;return r}
+function say(t,who,instant){
+  if(who==='me'){const r=document.createElement('div');r.className='m me';r.textContent=t;msgs.appendChild(r);msgs.scrollTop=msgs.scrollHeight;return Promise.resolve()}
+  const put=()=>{const r=document.createElement('div');r.className='mrow';const im=document.createElement('img');im.src='img/logo.png';im.alt='';const d=document.createElement('div');d.className='m bot';d.textContent=t;r.append(im,d);msgs.appendChild(r);msgs.scrollTop=msgs.scrollHeight};
+  if(instant){put();return Promise.resolve()}
+  const ty=typing();return new Promise(res=>setTimeout(()=>{ty.remove();put();res()},550));
+}
+function opts(list){quick.innerHTML='';list.forEach(o=>{
+  if(o.href){const a=document.createElement('a');a.href=o.href;a.target='_blank';a.rel='noopener';a.className='wa';a.textContent=o.t();quick.appendChild(a)}
+  else{const b=document.createElement('button');b.type='button';b.textContent=o.t();b.onclick=()=>o.fn?o.fn():handle(o.t());quick.appendChild(b)}})}
+const ownerMsg=m=>({t:()=>tr('c_owner'),href:wa(m||'Ciao Caveau Ramen, vorrei un’informazione.')});
+const toForm={t:()=>tr('c_form'),fn:()=>{closeChat();$('prenota').scrollIntoView({behavior:'smooth'})}};
+const mk=k=>({t:()=>tr(k)});
+const HOME=()=>[mk('c_hours'),mk('c_menu'),mk('c_spicy'),mk('c_allergy'),mk('c_where'),toForm,ownerMsg()];
+function openChat(){chat.hidden=false;fab.setAttribute('aria-expanded','true');if(!started){started=true;say(tr('c_greet'),'bot',true);opts(HOME())}setTimeout(()=>ci.focus(),50)}
+function closeChat(){chat.hidden=true;fab.setAttribute('aria-expanded','false')}
+fab.onclick=()=>chat.hidden?openChat():closeChat();$('x').onclick=closeChat;
+$('cf').onsubmit=e=>{e.preventDefault();const v=ci.value.trim();if(!v)return;ci.value='';handle(v)};
+const RX={
+ book:/prenot|tavolo|riserv/,hours:/orari|apert|chiud|quando|ora\b/,where:/dove|indirizzo|mappa|arriv|telefon|numero|chiamar/,
+ spicy:/piccant|vegetar|vegan|verdur|veggie/,allergy:/allerg|glutin|celiac|intollera|senza/,kids:/bambin|baby|figli|seggiol/,
+ menu:/menu|prezz|costa|mangi|ramen|piatt|cosa/,hello:/ciao|buon|salve|hey/
+};
+async function handle(text){
+  await say(text,'me');const t=text.toLowerCase();quick.innerHTML='';
+  const reply=async(r,o)=>{await say(r);opts(o)};
+  if(RX.book.test(t))return reply(tr('c_book'),[toForm,ownerMsg('Ciao Caveau Ramen, vorrei prenotare un tavolo.')]);
+  if(RX.allergy.test(t))return reply(tr('c_allergyr'),[ownerMsg('Ciao Caveau Ramen, ho un’allergia e vorrei sapere cosa posso ordinare.'),toForm]);
+  if(RX.spicy.test(t))return reply(tr('c_spicyr'),[mk('c_menu'),toForm]);
+  if(RX.kids.test(t))return reply(tr('c_kids'),[toForm,mk('c_menu')]);
+  if(RX.hours.test(t))return reply(tr('c_hoursr')+'\n'+$('status').textContent+'.',[toForm,mk('c_where')]);
+  if(RX.where.test(t))return reply(tr('c_wherer'),[{t:()=>tr('c_map'),href:'https://www.google.com/maps/search/?api=1&query=Caveau+Ramen+Via+Leonardo+da+Vinci+189+Alassio'},toForm]);
+  if(RX.menu.test(t))return reply(tr('c_menur'),[mk('c_spicy'),toForm]);
+  if(RX.hello.test(t))return reply(tr('c_hello'),HOME());
+  return reply(tr('c_unknown'),[ownerMsg('Ciao Caveau Ramen, vorrei sapere: '+text),{t:()=>tr('c_back'),fn:()=>opts(HOME())}]);
+}
+
+/* apply Italian strings */
+function apply(){
+  document.documentElement.lang='it';
+  document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=tr(e.dataset.i18n));
+  document.querySelectorAll('[data-i18n-html]').forEach(e=>e.innerHTML=tr(e.dataset.i18nHtml));
+  document.querySelectorAll('[data-i18n-ph]').forEach(e=>e.placeholder=tr(e.dataset.i18nPh));
+  document.querySelectorAll('[data-i18n-aria]').forEach(e=>e.setAttribute('aria-label',tr(e.dataset.i18nAria)));
+  document.querySelectorAll('[data-i18n-alt]').forEach(e=>e.alt=tr(e.dataset.i18nAlt));
+  document.querySelector('.poster img').alt='Caveau Ramen: i personaggi del locale in una strada giapponese di sera';
+  $('kprice').textContent=new Intl.NumberFormat('it-IT',{minimumFractionDigits:2}).format(15.9);
+  renderMenu(curTab);renderHours();renderStatus();setPpl(W.ppl);
+}
+
+/* hero scenery */
+(function(){
+  let seed=11;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+  const words=['ラーメン','餃子','居酒屋','麺','焼鳥','酒','定食','寿司','たこ焼き','丼','営業中','味噌','豚骨','茶','カラオケ'];
+  const cls=['red','cream','teal','gold','navy','pink'];
+  let h='';
+  for(let i=0;i<34;i++){
+    const w=34+rnd()*36,ht=90+rnd()*190,x=rnd()*96,y=rnd()*58,back=rnd()<.45;
+    h+=`<div class="sg ${cls[Math.floor(rnd()*cls.length)]}${back?' back':''}" style="left:${x}%;top:${y}%;width:${w}px;height:${ht}px;font-size:${w*.62}px"><span>${words[Math.floor(rnd()*words.length)]}</span></div>`;
+  }
+  for(let i=0;i<9;i++)h+=`<div class="bk" style="left:${rnd()*100}%;top:${rnd()*80}%;width:${60+rnd()*90}px;height:${60+rnd()*90}px"></div>`;
+  $('street').innerHTML=h;
+  const kan=['麺','拉','福','餃','丼','味','麺','拉','福','餃','丼','味','麺','拉','福','餃','丼','味','麺','拉','福','餃','丼','味'];
+  $('norow').innerHTML=kan.map(k=>`<div class="nr"><span>${k}</span></div>`).join('');
+  const lan=k=>`<svg viewBox="0 0 46 76" width="100%" height="100%"><path d="M23,0 V11" stroke="#5a3a2a" stroke-width="2"/><rect x="10" y="10" width="26" height="6" rx="2" fill="#2b1f24"/><path d="M8,16 Q1,38 8,60 H38 Q45,38 38,16Z" fill="#e0392d" stroke="#2b1f24" stroke-width="1.6"/><path d="M6,28 Q23,33 40,28 M4,38 Q23,44 42,38 M6,50 Q23,55 40,50" fill="none" stroke="#ff8a6a" stroke-width="1.3"/><rect x="10" y="60" width="26" height="6" rx="2" fill="#2b1f24"/><path d="M23,66 V75" stroke="#e0392d" stroke-width="2"/><text x="23" y="45" text-anchor="middle" font-family="Yuji Boku,serif" font-weight="800" font-size="17" fill="#fff6e0">${k}</text></svg>`;
+  document.querySelectorAll('.lan').forEach((e,i)=>e.innerHTML=lan(['拉','麺','福','餃'][i]));
+  const w=['ラーメン','餃子','どら焼き','丼','たこ焼き','CAVEAU RAMEN'];
+  const seq=w.map(x=>`${x}<span>✿</span>`).join('');
+  $('bandin').innerHTML=seq.repeat(4)+seq.repeat(4);
+})();
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const c=$('petals'),x=c.getContext('2d');let W2,H2,P=[];
+  function size(){const r=c.parentElement.getBoundingClientRect();W2=c.width=r.width;H2=c.height=r.height}size();addEventListener('resize',size);
+  const N=innerWidth<600?10:22;
+  for(let i=0;i<N;i++)P.push({x:Math.random()*W2,y:Math.random()*H2,r:5+Math.random()*5,s:.35+Math.random()*.6,w:Math.random()*6,a:Math.random()*6});
+  (function loop(){x.clearRect(0,0,W2,H2);
+    for(const p of P){p.y+=p.s;p.w+=.012;p.x+=Math.sin(p.w)*.5+.2;p.a+=.015;if(p.y>H2+10){p.y=-10;p.x=Math.random()*W2}if(p.x>W2+10)p.x=-10;
+      x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle='rgba(255,180,205,.85)';x.beginPath();x.ellipse(0,0,p.r,p.r*.55,0,0,7);x.fill();x.restore()}
+    requestAnimationFrame(loop)})();
+})();
+apply();
+
+</script></body></html>
+</body></html>
